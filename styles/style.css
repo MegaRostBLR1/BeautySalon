@@ -285,12 +285,6 @@ button {
 .service-card {
     background-color: var(--color-bg-card);
     overflow: hidden;
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .service-card__image-wrapper {
