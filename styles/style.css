@@ -285,6 +285,7 @@ button {
 .service-card {
     background-color: var(--color-bg-card);
     overflow: hidden;
+    cursor: pointer;
 }
 
 .service-card__image-wrapper {
