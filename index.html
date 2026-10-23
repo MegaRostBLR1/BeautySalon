@@ -65,55 +65,40 @@
         <div class="services__container">
             <h2 class="services__title" id="services-title">Услуги салона</h2>
             <div class="services__grid">
-
-                <!-- Card 1 -->
                 <article class="service-card">
                     <div class="service-card__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Парикмахерские услуги в салоне" class="service-card__image" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="Аппаратный массаж" class="service-card__image" loading="lazy">
+                    </div>
+                    <h3 class="service-card__caption">Аппаратные массажи</h3>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" alt="Ручной массаж" class="service-card__image" loading="lazy">
+                    </div>
+                    <h3 class="service-card__caption">Ручные массажи</h3>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Программа коррекции фигуры и похудения" class="service-card__image" loading="lazy">
+                    </div>
+                    <h3 class="service-card__caption">Программы похудения</h3>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Парикмахерские услуги" class="service-card__image" loading="lazy">
                     </div>
                     <h3 class="service-card__caption">Парикмахерские услуги</h3>
                 </article>
 
-                <!-- Card 2 -->
                 <article class="service-card">
                     <div class="service-card__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80" alt="Процесс выполнения маникюра" class="service-card__image" loading="lazy">
-                    </div>
-                    <h3 class="service-card__caption">Маникюр</h3>
-                </article>
-
-                <!-- Card 3 -->
-                <article class="service-card">
-                    <div class="service-card__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=800&q=80" alt="Уход за стопами и педикюр" class="service-card__image" loading="lazy">
-                    </div>
-                    <h3 class="service-card__caption">Педикюр</h3>
-                </article>
-
-                <!-- Card 4 -->
-                <article class="service-card">
-                    <div class="service-card__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Косметологическая процедура для лица" class="service-card__image" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Косметологические процедуры" class="service-card__image" loading="lazy">
                     </div>
                     <h3 class="service-card__caption">Косметология</h3>
                 </article>
-
-                <!-- Card 5 -->
-                <article class="service-card">
-                    <div class="service-card__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Эстетические процедуры по телу" class="service-card__image" loading="lazy">
-                    </div>
-                    <h3 class="service-card__caption">Эстетист по телу</h3>
-                </article>
-
-                <!-- Card 6 -->
-                <article class="service-card">
-                    <div class="service-card__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80" alt="Палетка теней и кисти для визажа" class="service-card__image" loading="lazy">
-                    </div>
-                    <h3 class="service-card__caption">Визаж</h3>
-                </article>
-
             </div>
         </div>
     </section>
@@ -213,12 +198,11 @@
                 <label for="service-select" class="booking-form__label">Услуга</label>
                 <select id="service-select" class="booking-form__select" required>
                     <option value="">Выберите услугу</option>
+                    <option value="device-massage">Аппаратные массажи</option>
+                    <option value="manual-massage">Ручные массажи</option>
+                    <option value="weight-loss">Программы похудения</option>
                     <option value="hair">Парикмахерские услуги</option>
-                    <option value="manicure">Маникюр</option>
-                    <option value="pedicure">Педикюр</option>
                     <option value="cosmetology">Косметология</option>
-                    <option value="body">Эстетист по телу</option>
-                    <option value="visage">Визаж</option>
                 </select>
             </div>
             <button type="submit" class="button button--primary button--full">Записаться</button>
