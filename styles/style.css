@@ -8,33 +8,27 @@
     --color-accent-gold: #c5a059;
     --color-accent-gold-hover: #d8b46d;
     --color-border: #2a2a2a;
-
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
     --space-xs: 0.5rem;
     --space-sm: 1rem;
     --space-md: 2rem;
     --space-lg: 4rem;
     --space-xl: 6rem;
-
     --container-max-width: 1200px;
     --header-height: 80px;
     --transition-base: 0.3s ease;
     --radius-sm: 4px;
 }
-
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 html {
     scroll-behavior: smooth;
     font-size: 16px;
 }
-
 body.beauty-page {
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
@@ -42,26 +36,22 @@ body.beauty-page {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
-
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
-
 a {
     color: inherit;
     text-decoration: none;
     transition: color var(--transition-base);
 }
-
 button {
     font-family: inherit;
     cursor: pointer;
     border: none;
     background: none;
 }
-
 .button {
     display: inline-flex;
     align-items: center;
@@ -77,33 +67,27 @@ button {
     text-transform: uppercase;
     transition: all var(--transition-base);
 }
-
 .button--primary {
     background-color: var(--color-accent-gold);
     color: #000000;
 }
-
 .button--primary:hover,
 .button--primary:focus-visible {
     background-color: var(--color-accent-gold-hover);
     box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
 }
-
 .button--secondary {
     border: 1px solid var(--color-accent-gold);
     color: var(--color-text-primary);
 }
-
 .button--secondary:hover,
 .button--secondary:focus-visible {
     background-color: rgba(197, 160, 89, 0.12);
     color: var(--color-accent-gold-hover);
 }
-
 .button--full {
     width: 100%;
 }
-
 .beauty-header {
     position: fixed;
     top: 0;
@@ -115,7 +99,6 @@ button {
     z-index: 100;
     border-bottom: 1px solid var(--color-border);
 }
-
 .beauty-header__container {
     max-width: var(--container-max-width);
     margin: 0 auto;
@@ -125,7 +108,6 @@ button {
     align-items: center;
     justify-content: space-between;
 }
-
 .beauty-header__logo-text {
     font-family: var(--font-heading);
     font-size: 1.5rem;
@@ -133,36 +115,30 @@ button {
     letter-spacing: 0.2em;
     color: var(--color-accent-gold);
 }
-
 .beauty-header__menu {
     display: flex;
     list-style: none;
     gap: 2rem;
 }
-
 .beauty-header__link {
     font-size: 0.875rem;
     letter-spacing: 0.05em;
     color: var(--color-text-secondary);
 }
-
 .beauty-header__link:hover,
 .beauty-header__link:focus-visible {
     color: var(--color-accent-gold);
 }
-
 .beauty-header__actions {
     display: flex;
     align-items: center;
     gap: 1.5rem;
 }
-
 .beauty-header__phone {
     font-size: 0.875rem;
     letter-spacing: 0.05em;
     font-weight: 500;
 }
-
 .beauty-header__burger {
     display: none;
     flex-direction: column;
@@ -172,17 +148,15 @@ button {
     min-height: 44px;
     justify-content: center;
 }
-
 .beauty-header__burger-line {
     width: 24px;
     height: 2px;
     background-color: var(--color-text-primary);
     transition: transform var(--transition-base);
 }
-
 .hero-banner {
     position: relative;
-    min-height: 100vh;
+    min-height: min(88vh, 760px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -191,11 +165,9 @@ button {
     url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     text-align: center;
 }
-
 .hero-banner__container {
-    max-width: 800px;
+    max-width: 760px;
 }
-
 .hero-banner__subtitle {
     display: block;
     font-size: 0.875rem;
@@ -204,24 +176,21 @@ button {
     color: var(--color-accent-gold);
     margin-bottom: var(--space-sm);
 }
-
 .hero-banner__title {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-size: clamp(2.5rem, 6vw, 4.25rem);
     font-weight: 500;
-    line-height: 1.15;
+    line-height: 1.08;
     margin-bottom: var(--space-sm);
     color: var(--color-text-primary);
 }
-
 .hero-banner__description {
-    max-width: 680px;
-    margin: 0 auto var(--space-md);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
     font-size: 1rem;
     color: var(--color-text-secondary);
     font-weight: 300;
 }
-
 .hero-banner__actions {
     display: flex;
     justify-content: center;
@@ -229,7 +198,6 @@ button {
     flex-wrap: wrap;
     gap: var(--space-sm);
 }
-
 .hero-banner__benefits {
     display: flex;
     justify-content: center;
@@ -243,13 +211,11 @@ button {
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
-
 .hero-banner__benefits li {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
 }
-
 .hero-banner__benefits li + li::before {
     content: "";
     width: 4px;
@@ -257,18 +223,15 @@ button {
     border-radius: 50%;
     background-color: var(--color-accent-gold);
 }
-
 .testimonial {
     padding: var(--space-lg) var(--space-sm);
     background-color: var(--color-bg-primary);
     text-align: center;
 }
-
 .testimonial__container {
     max-width: 800px;
     margin: 0 auto;
 }
-
 .testimonial__text {
     font-family: var(--font-heading);
     font-size: clamp(1.4rem, 3vw, 2rem);
@@ -277,7 +240,6 @@ button {
     color: var(--color-text-primary);
     margin-bottom: var(--space-sm);
 }
-
 .testimonial__author {
     font-size: 0.875rem;
     letter-spacing: 0.15em;
@@ -285,17 +247,14 @@ button {
     color: var(--color-accent-gold);
     font-style: normal;
 }
-
 .services {
-    padding: var(--space-xl) var(--space-sm);
+    padding: var(--space-lg) var(--space-sm) var(--space-xl);
     background-color: var(--color-bg-primary);
 }
-
 .services__container {
     max-width: var(--container-max-width);
     margin: 0 auto;
 }
-
 .services__title {
     font-family: var(--font-heading);
     font-size: 2.5rem;
@@ -303,22 +262,19 @@ button {
     color: var(--color-accent-gold);
     margin-bottom: var(--space-sm);
 }
-
 .services__description {
-    max-width: 680px;
-    margin: 0 auto var(--space-lg);
+    max-width: 620px;
+    margin: 0 auto var(--space-md);
     color: var(--color-text-secondary);
     font-size: 1rem;
     line-height: 1.7;
     text-align: center;
 }
-
 .services__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
 }
-
 .service-card {
     background-color: var(--color-bg-section);
     border-radius: var(--radius-sm);
@@ -331,7 +287,6 @@ button {
     padding-top: 66.66%;
     overflow: hidden;
 }
-
 .service-card__image {
     position: absolute;
     top: 0;
@@ -341,11 +296,9 @@ button {
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .service-card:hover .service-card__image {
     transform: scale(1.05);
 }
-
 .service-card__caption {
     padding: 1.25rem;
     font-size: 1.1rem;
@@ -354,23 +307,19 @@ button {
     color: var(--color-text-primary);
     transition: color var(--transition-base);
 }
-
 .service-card:hover .service-card__caption {
     color: var(--color-accent-gold);
 }
-
 .brands {
     padding: var(--space-md) var(--space-sm);
     background-color: var(--color-bg-card);
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
 }
-
 .brands__container {
     max-width: var(--container-max-width);
     margin: 0 auto;
 }
-
 .brands__row {
     display: flex;
     justify-content: space-around;
@@ -378,7 +327,6 @@ button {
     flex-wrap: wrap;
     gap: 2rem;
 }
-
 .brands__item {
     font-family: var(--font-heading);
     font-size: 1.25rem;
@@ -387,22 +335,18 @@ button {
     opacity: 0.6;
     transition: color var(--transition-base), opacity var(--transition-base);
 }
-
 .brands__item:hover {
     opacity: 1;
     color: var(--color-accent-gold);
 }
-
 .portfolio {
-    padding: var(--space-xl) var(--space-sm);
+    padding: var(--space-lg) var(--space-sm);
     background-color: var(--color-bg-section);
 }
-
 .portfolio__container {
     max-width: var(--container-max-width);
     margin: 0 auto;
 }
-
 .portfolio__title {
     font-family: var(--font-heading);
     font-size: 2.5rem;
@@ -410,38 +354,32 @@ button {
     color: var(--color-accent-gold);
     margin-bottom: var(--space-lg);
 }
-
 .portfolio__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1rem;
 }
-
 .portfolio__item {
     position: relative;
     aspect-ratio: 1 / 1;
     overflow: hidden;
     background-color: var(--color-bg-card);
 }
-
 .portfolio__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease, filter 0.5s ease;
 }
-
 .portfolio__item:hover .portfolio__image {
     transform: scale(1.08);
     filter: brightness(1.1);
 }
-
 .beauty-footer {
     background-color: var(--color-bg-primary);
     border-top: 1px solid var(--color-border);
     padding-top: var(--space-lg);
 }
-
 .beauty-footer__container {
     max-width: var(--container-max-width);
     margin: 0 auto;
@@ -451,14 +389,12 @@ button {
     gap: 2.5rem;
     padding-bottom: var(--space-lg);
 }
-
 .beauty-footer__brand {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     color: var(--color-accent-gold);
     margin-bottom: var(--space-xs);
 }
-
 .beauty-footer__heading {
     font-size: 1rem;
     letter-spacing: 0.1em;
@@ -466,35 +402,29 @@ button {
     margin-bottom: var(--space-xs);
     color: var(--color-text-primary);
 }
-
 .beauty-footer__text {
     color: var(--color-text-secondary);
     font-size: 0.875rem;
     font-weight: 300;
 }
-
 .beauty-footer__socials {
     list-style: none;
     display: flex;
     gap: 1rem;
 }
-
 .beauty-footer__link:hover {
     color: var(--color-accent-gold);
 }
-
 .beauty-footer__bottom {
     padding: 0 var(--space-sm) var(--space-md);
     text-align: center;
     font-size: 0.75rem;
     color: var(--color-text-secondary);
 }
-
 .beauty-footer__bottom .beauty-footer__container {
     display: block;
     padding-bottom: 0;
 }
-
 .modal {
     position: fixed;
     top: 0;
@@ -509,12 +439,10 @@ button {
     visibility: hidden;
     transition: opacity var(--transition-base), visibility var(--transition-base);
 }
-
 .modal.is-open {
     opacity: 1;
     visibility: visible;
 }
-
 .modal__overlay {
     position: absolute;
     top: 0;
@@ -524,7 +452,6 @@ button {
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(4px);
 }
-
 .modal__content {
     position: relative;
     background-color: var(--color-bg-card);
@@ -535,7 +462,6 @@ button {
     z-index: 10;
     border-radius: var(--radius-sm);
 }
-
 .modal__close {
     position: absolute;
     top: 1rem;
@@ -544,7 +470,6 @@ button {
     color: var(--color-text-secondary);
     line-height: 1;
 }
-
 .modal__title {
     font-family: var(--font-heading);
     font-size: 1.8rem;
@@ -552,11 +477,9 @@ button {
     margin-bottom: 1.5rem;
     text-align: center;
 }
-
 .booking-form__group {
     margin-bottom: 1.25rem;
 }
-
 .booking-form__label {
     display: block;
     font-size: 0.8rem;
@@ -565,7 +488,6 @@ button {
     color: var(--color-text-secondary);
     margin-bottom: 0.4rem;
 }
-
 .booking-form__input,
 .booking-form__select {
     width: 100%;
@@ -577,25 +499,21 @@ button {
     font-size: 0.9rem;
     border-radius: var(--radius-sm);
 }
-
 .booking-form__input:focus,
 .booking-form__select:focus {
     outline: none;
     border-color: var(--color-accent-gold);
 }
-
 .faq {
     padding: var(--space-xl) var(--space-sm);
     background-color: var(--color-bg-primary);
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
 }
-
 .faq__container {
     max-width: 900px;
     margin: 0 auto;
 }
-
 .faq__title {
     font-family: var(--font-heading);
     font-size: 2.5rem;
@@ -605,15 +523,12 @@ button {
     color: var(--color-accent-gold);
     margin-bottom: var(--space-lg);
 }
-
 .faq__list {
     border-top: 1px solid var(--color-border);
 }
-
 .faq__item {
     border-bottom: 1px solid var(--color-border);
 }
-
 .faq__question {
     position: relative;
     display: block;
@@ -626,11 +541,9 @@ button {
     list-style: none;
     transition: color var(--transition-base);
 }
-
 .faq__question::-webkit-details-marker {
     display: none;
 }
-
 .faq__question::after {
     content: "+";
     position: absolute;
@@ -644,20 +557,17 @@ button {
     transform: translateY(-50%);
     transition: transform var(--transition-base);
 }
-
 .faq__item[open] .faq__question::after {
     transform: translateY(-50%) rotate(45deg);
 }
-
 .faq__question:hover,
 .faq__question:focus-visible {
     color: var(--color-accent-gold);
 }
-
 .faq__question:focus-visible {
     outline: 2px solid var(--color-accent-gold);
-    outline-offset: 4px;}
-
+    outline-offset: 4px;
+}
 .faq__answer {
     padding: 0 2.5rem 1.5rem 0;
     color: var(--color-text-secondary);
@@ -666,104 +576,55 @@ button {
     line-height: 1.8;
     overflow: hidden;
 }
-
 .faq__answer p + p {
     margin-top: var(--space-sm);
 }
-
 .faq__answer ul {
     padding-left: 1.25rem;
 }
-
 .faq__answer li + li {
     margin-top: 0.5rem;
 }
-
 .faq__answer strong {
     color: var(--color-text-primary);
     font-weight: 500;
 }
-
-.hero-banner {
-    min-height: min(88vh, 760px);
-}
-
-.hero-banner__container {
-    max-width: 760px;
-}
-
-.hero-banner__title {
-    font-size: clamp(2.5rem, 6vw, 4.25rem);
-    line-height: 1.08;
-}
-
-.hero-banner__description {
-    max-width: 600px;
-    margin-bottom: 1.5rem;
-}
-
-.services {
-    padding-top: var(--space-lg);
-}
-
-.services__description {
-    max-width: 620px;
-    margin-bottom: var(--space-md);
-}
-
-.portfolio {
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
-}
-
-.portfolio__grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
 @media (max-width: 900px) {
     .portfolio__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
-}
-
 @media (max-width: 768px) {
     .hero-banner {
         min-height: 100svh;
-}
-
+    }
     .portfolio__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
-}
-
 @media (max-width: 580px) {
     .portfolio__grid {
         grid-template-columns: minmax(0, 1fr);
+    }
 }
-}
-
 @media (max-width: 1100px) {
     .services__grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
-}
-
 @media (max-width: 900px) {
     .services__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
+    }
     .portfolio__grid {
         grid-template-columns: repeat(2, 1fr);
+    }
 }
-}
-
 @media (max-width: 400px) {
     .services__grid {
         grid-template-columns: minmax(0, 1fr);
+    }
 }
-}
-
 @media (max-width: 768px) {
     .beauty-header__nav {
         position: fixed;
@@ -775,95 +636,77 @@ button {
         border-bottom: 1px solid var(--color-border);
         transform: translateY(-150%);
         transition: transform var(--transition-base);
-}
-
+    }
     .beauty-header__nav.is-open {
         transform: translateY(0);
-}
-
+    }
     .beauty-header__menu {
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
-}
-
+    }
     .beauty-header__burger {
         display: flex;
-}
-
+    }
     .beauty-header__phone {
         display: none;
+    }
 }
-}
-
 @media (max-width: 580px) {
     .hero-banner {
         min-height: 100svh;
-}
-
+    }
     .hero-banner__subtitle {
         font-size: 0.7rem;
         letter-spacing: 0.16em;
         line-height: 1.7;
-}
-
+    }
     .hero-banner__actions {
         flex-direction: column;
         align-items: stretch;
-}
-
+    }
     .hero-banner__actions .button {
         width: 100%;
-}
-
+    }
     .hero-banner__benefits {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
         font-size: 0.7rem;
-}
-
+    }
     .hero-banner__benefits li + li::before {
         display: none;
-}
-
+    }
     .services__grid {
         grid-template-columns: 1fr;
-}
-
+    }
     .portfolio__grid {
         grid-template-columns: 1fr;
+    }
 }
-}
-
 @media (max-width: 768px) {
     :root {
         --space-lg: 3rem;
         --space-xl: 4rem;
         --header-height: 72px;
-}
-
+    }
     .beauty-header__container {
         gap: 0.75rem;
-}
-
+    }
     .beauty-header__logo {
         min-width: 0;
         max-width: calc(100% - 56px);
-}
-
+    }
     .beauty-header__logo-text {
         display: block;
         font-size: 1.25rem;
         letter-spacing: 0.14em;
         overflow-wrap: anywhere;
-}
-
+    }
     .hero-banner {
         min-height: 100svh;
         padding: calc(var(--header-height) + var(--space-lg)) var(--space-sm) var(--space-lg);
-}
-
+    }
     .services__title,
     .portfolio__title,
     .faq__title {
@@ -871,59 +714,49 @@ button {
         line-height: 1.15;
         margin-bottom: var(--space-md);
         overflow-wrap: anywhere;
-}
-
+    }
     .services__grid,
     .portfolio__grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 1.25rem;
-}
-
+    }
     .service-card,
     .portfolio__item,
     .beauty-footer__col {
         min-width: 0;
-}
-
+    }
     .service-card__caption {
         padding: 1rem;
         font-size: 1rem;
         line-height: 1.4;
         overflow-wrap: anywhere;
-}
-
+    }
     .brands__row {
         gap: 1.25rem;
-}
-
+    }
     .brands__item {
         max-width: 100%;
         font-size: 1rem;
         letter-spacing: 0.12em;
         text-align: center;
         overflow-wrap: anywhere;
-}
-
+    }
     .beauty-footer__container {
         grid-template-columns: minmax(0, 1fr);
         gap: 1.75rem;
-}
-
+    }
     .beauty-footer__text,
     .beauty-footer__link {
         overflow-wrap: anywhere;
-}
-
+    }
     .beauty-footer__socials {
         flex-wrap: wrap;
-}
-
+    }
     .modal {
         padding: 1rem;
         overflow-y: auto;
         align-items: flex-start;
-}
-
+    }
     .modal__content {
         width: 100%;
         max-width: 450px;
@@ -932,176 +765,145 @@ button {
         margin: auto;
         padding: 2rem 1.25rem 1.5rem;
         overflow-y: auto;
-}
-
+    }
     .modal__title {
         padding: 0 1.5rem;
         font-size: 1.6rem;
         overflow-wrap: anywhere;
-}
-
+    }
     .booking-form__input,
     .booking-form__select {
         min-width: 0;
         font-size: 1rem;
-}
-
+    }
     .faq__question {
         padding: 1.125rem 2.25rem 1.125rem 0;
         font-size: 1.3rem;
         overflow-wrap: anywhere;
-}
-
+    }
     .faq__answer {
         padding-right: 0;
         font-size: 0.9375rem;
         overflow-wrap: anywhere;
-}
-
+    }
     .button {
         max-width: 100%;
         padding: 0.875rem 1rem;
         letter-spacing: 0.08em;
         overflow-wrap: anywhere;
+    }
 }
-}
-
 @media (max-width: 400px) {
     :root {
         --space-md: 1.5rem;
         --space-lg: 2.5rem;
         --space-xl: 3rem;
         --header-height: 64px;
-}
-
+    }
     .beauty-header__logo-text {
         font-size: 1.05rem;
         letter-spacing: 0.1em;
-}
-
+    }
     .beauty-header__burger {
         flex: 0 0 44px;
         min-width: 44px;
         padding: 8px;
-}
-
+    }
     .hero-banner {
         padding-right: 0.875rem;
         padding-left: 0.875rem;
-}
-
+    }
     .hero-banner__title {
         font-size: 2rem;
         line-height: 1.12;
         overflow-wrap: anywhere;
-}
-
+    }
     .hero-banner__subtitle {
         font-size: 0.6875rem;
         letter-spacing: 0.1em;
         overflow-wrap: anywhere;
-}
-
+    }
     .hero-banner__description {
         font-size: 0.9375rem;
-}
-
+    }
     .hero-banner__benefits {
         font-size: 0.625rem;
         letter-spacing: 0.06em;
-}
-
+    }
     .services__title,
     .portfolio__title,
     .faq__title {
         font-size: 1.875rem;
-}
-
+    }
     .testimonial__text {
         font-size: 1.375rem;
-}
-
+    }
     .testimonial__author {
         font-size: 0.75rem;
         letter-spacing: 0.08em;
         overflow-wrap: anywhere;
-}
-
+    }
     .brands__row {
         flex-direction: column;
         gap: 1rem;
-}
-
+    }
     .beauty-footer__brand {
         font-size: 1.25rem;
         overflow-wrap: anywhere;
-}
-
+    }
     .beauty-footer__bottom {
         padding: 1.25rem 0.875rem;
         overflow-wrap: anywhere;
-}
-
+    }
     .modal__content {
         padding: 1.75rem 1rem 1.25rem;
-}
-
+    }
     .faq__question {
         font-size: 1.2rem;
+    }
 }
-}
-
 @media (max-width: 360px) {
     .beauty-header__container {
         padding-right: 0.75rem;
         padding-left: 0.75rem;
-}
-
-    .beauty-header__logo-text {        font-size: 0.95rem;
+    }
+    .beauty-header__logo-text {
+        font-size: 0.95rem;
         letter-spacing: 0.08em;
-}
-
+    }
     .hero-banner__title {
         font-size: 1.8rem;
-}
-
+    }
     .hero-banner__actions {
         gap: 0.75rem;
-}
-
+    }
     .hero-banner__actions .button {
         padding-right: 0.625rem;
         padding-left: 0.625rem;
         font-size: 0.75rem;
         letter-spacing: 0.06em;
-}
-
+    }
     .services__title,
     .portfolio__title,
     .faq__title {
         font-size: 1.7rem;
-}
-
+    }
     .faq__question {
         padding-right: 1.75rem;
         font-size: 1.125rem;
-}
-
+    }
     .faq__question::after {
         font-size: 1.25rem;
-}
-
+    }
     .beauty-footer__heading {
         font-size: 0.875rem;
         letter-spacing: 0.07em;
+    }
 }
-}
-
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
-}
-
+    }
     *,
     *::before,
     *::after {
@@ -1109,26 +911,22 @@ button {
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
+    }
 }
-}
-
 .hardware-massages {
     min-height: 100vh;
     padding-top: var(--header-height);
     background: var(--color-bg-primary);
 }
-
 .hardware-massages__hero {
     padding: clamp(3rem, 7vw, 6rem) var(--space-sm) var(--space-md);
     text-align: center;
     background: var(--color-bg-primary);
 }
-
 .hardware-massages__container {
     width: min(100%, var(--container-max-width));
     margin-inline: auto;
 }
-
 .hardware-massages__eyebrow {
     display: inline-block;
     margin-bottom: 1rem;
@@ -1139,7 +937,6 @@ button {
     line-height: 1.5;
     text-transform: uppercase;
 }
-
 .hardware-massages__title {
     max-width: 850px;
     margin: 0 auto 1rem;
@@ -1150,7 +947,6 @@ button {
     line-height: 1.05;
     overflow-wrap: anywhere;
 }
-
 .hardware-massages__intro {
     max-width: 620px;
     margin: 0 auto;
@@ -1158,23 +954,19 @@ button {
     font-size: 0.9375rem;
     line-height: 1.8;
 }
-
 .hardware-massages__content {
     padding: 0 var(--space-sm) var(--space-xl);
 }
-
 .hardware-massages__layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
     gap: clamp(1.5rem, 4vw, 3.5rem);
     align-items: start;
 }
-
 .hardware-massages__list {
     min-width: 0;
     border-top: 1px solid var(--color-border);
 }
-
 .hardware-massages__item {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -1185,13 +977,11 @@ button {
     border-bottom: 1px solid var(--color-border);
     transition: background-color var(--transition-base), padding var(--transition-base);
 }
-
 .hardware-massages__item:hover {
     padding-right: 1rem;
     padding-left: 1rem;
     background-color: var(--color-bg-card);
 }
-
 .hardware-massages__name {
     min-width: 0;
     color: var(--color-text-primary);
@@ -1201,7 +991,6 @@ button {
     line-height: 1.6;
     overflow-wrap: anywhere;
 }
-
 .hardware-massages__price {
     color: var(--color-accent-gold);
     font-size: 0.9375rem;
@@ -1209,7 +998,6 @@ button {
     line-height: 1.4;
     white-space: nowrap;
 }
-
 .hardware-massages__media {
     position: sticky;
     top: calc(var(--header-height) + 1.5rem);
@@ -1217,14 +1005,12 @@ button {
     overflow: hidden;
     background: var(--color-bg-card);
 }
-
 .hardware-massages__image {
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
     object-position: center;
 }
-
 .hardware-massages__media-caption {
     padding: 1.25rem;
     border-top: 1px solid var(--color-border);
@@ -1234,7 +1020,6 @@ button {
     line-height: 1.35;
     text-align: center;
 }
-
 .hardware-massages__actions {
     display: flex;
     flex-direction: column;
@@ -1242,11 +1027,9 @@ button {
     gap: 0.75rem;
     margin-top: 2rem;
 }
-
 .hardware-massages__actions .button {
     min-width: 0;
 }
-
 .hardware-massages__back {
     display: inline-flex;
     align-items: center;
@@ -1257,100 +1040,80 @@ button {
     text-decoration: none;
     transition: color var(--transition-base);
 }
-
 .hardware-massages__back:hover {
     color: var(--color-accent-gold);
 }
-
 .hardware-massages__back:focus-visible {
     outline: 2px solid var(--color-accent-gold);
     outline-offset: 4px;
 }
-
 @media (max-width: 760px) {
     .hardware-massages__layout {
         grid-template-columns: minmax(0, 1fr);
-}
-
+    }
     .hardware-massages__media {
         position: static;
         grid-row: 1;
-}
-
+    }
     .hardware-massages__image {
         max-height: 360px;
         aspect-ratio: 16 / 9;
-}
-
+    }
     .hardware-massages__media-caption {
         padding: 0.875rem 1rem;
         font-size: 1.125rem;
+    }
 }
-}
-
 @media (max-width: 480px) {
     .hardware-massages__container {
         width: 100%;
-}
-
+    }
     .hardware-massages__hero {
         padding-top: 2.5rem;
-}
-
+    }
     .hardware-massages__title {
         font-size: 2.25rem;
-}
-
+    }
     .hardware-massages__content {
         padding-right: 0.875rem;
         padding-left: 0.875rem;
-}
-
+    }
     .hardware-massages__item {
         grid-template-columns: minmax(0, 1fr);
         gap: 0.35rem;
         padding: 1rem 0.625rem;
-}
-
+    }
     .hardware-massages__item:hover {
         padding-right: 0.625rem;
         padding-left: 0.625rem;
-}
-
+    }
     .hardware-massages__name {
         font-size: 0.8125rem;
-}
-
+    }
     .hardware-massages__price {
         font-size: 0.875rem;
-}
-
+    }
     .hardware-massages__actions {
         flex-direction: column;
-}
-
+    }
     .hardware-massages__actions .button {
         width: 100%;
+    }
 }
-}
-
 .manual-massages {
     min-height: 100vh;
     padding-top: var(--header-height);
     background: var(--color-bg-primary);
 }
-
 .manual-massages__hero {
     padding: clamp(3rem, 7vw, 6rem) var(--space-sm) var(--space-md);
     text-align: center;
     background: var(--color-bg-primary);
 }
-
 .manual-massages__container {
     width: min(100%, var(--container-max-width));
     margin-inline: auto;
 }
-
 .manual-massages__eyebrow {
     display: inline-block;
     margin-bottom: 1rem;
@@ -1361,7 +1124,6 @@ button {
     line-height: 1.5;
     text-transform: uppercase;
 }
-
 .manual-massages__title {
     max-width: 850px;
     margin: 0 auto 1rem;
@@ -1372,7 +1134,6 @@ button {
     line-height: 1.05;
     overflow-wrap: anywhere;
 }
-
 .manual-massages__intro {
     max-width: 620px;
     margin: 0 auto;
@@ -1380,25 +1141,22 @@ button {
     font-size: 0.9375rem;
     line-height: 1.8;
 }
-
 .manual-massages__content {
     padding: 0 var(--space-sm) var(--space-xl);
 }
-
 .manual-massages__layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
     gap: clamp(1.5rem, 4vw, 3.5rem);
     align-items: start;
 }
-
 .manual-massages__list {
     min-width: 0;
     border-top: 1px solid var(--color-border);
 }
-
 .manual-massages__item {
-    display: grid;    grid-template-columns: minmax(0, 1fr);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     align-items: center;
     gap: 1rem;
     min-width: 0;
@@ -1406,13 +1164,11 @@ button {
     border-bottom: 1px solid var(--color-border);
     transition: background-color var(--transition-base), padding var(--transition-base);
 }
-
 .manual-massages__item:hover {
     padding-right: 1rem;
     padding-left: 1rem;
     background-color: var(--color-bg-card);
 }
-
 .manual-massages__details {
     display: flex;
     align-items: center;
@@ -1420,14 +1176,12 @@ button {
     gap: 1rem;
     min-width: 0;
 }
-
 .manual-massages__price {
     flex-shrink: 0;
     color: var(--color-accent, #b99a5b);
     font-weight: 600;
     white-space: nowrap;
 }
-
 .manual-massages__name {
     min-width: 0;
     color: var(--color-text-primary);
@@ -1437,7 +1191,6 @@ button {
     line-height: 1.6;
     overflow-wrap: anywhere;
 }
-
 .manual-massages__media {
     position: sticky;
     top: calc(var(--header-height) + 1.5rem);
@@ -1445,14 +1198,12 @@ button {
     overflow: hidden;
     background: var(--color-bg-card);
 }
-
 .manual-massages__image {
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
     object-position: center;
 }
-
 .manual-massages__media-caption {
     padding: 1.25rem;
     border-top: 1px solid var(--color-border);
@@ -1462,7 +1213,6 @@ button {
     line-height: 1.35;
     text-align: center;
 }
-
 .manual-massages__actions {
     display: flex;
     flex-direction: column;
@@ -1470,11 +1220,9 @@ button {
     gap: 0.75rem;
     margin-top: 2rem;
 }
-
 .manual-massages__actions .button {
     min-width: 0;
 }
-
 .manual-massages__back {
     display: inline-flex;
     align-items: center;
@@ -1485,105 +1233,84 @@ button {
     text-decoration: none;
     transition: color var(--transition-base);
 }
-
 .manual-massages__back:hover {
     color: var(--color-accent-gold);
 }
-
 .manual-massages__back:focus-visible {
     outline: 2px solid var(--color-accent-gold);
     outline-offset: 4px;
 }
-
 @media (max-width: 760px) {
     .manual-massages__layout {
         grid-template-columns: minmax(0, 1fr);
-}
-
+    }
     .manual-massages__media {
         position: static;
         grid-row: 1;
-}
-
+    }
     .manual-massages__image {
         max-height: 360px;
         aspect-ratio: 16 / 9;
-}
-
+    }
     .manual-massages__media-caption {
         padding: 0.875rem 1rem;
         font-size: 1.125rem;
+    }
 }
-}
-
 @media (max-width: 480px) {
     .manual-massages__container {
         width: 100%;
-}
-
+    }
     .manual-massages__hero {
         padding-top: 2.5rem;
-}
-
+    }
     .manual-massages__title {
         font-size: 2.25rem;
-}
-
+    }
     .manual-massages__content {
         padding-right: 0.875rem;
         padding-left: 0.875rem;
-}
-
+    }
     .manual-massages__item {
         grid-template-columns: minmax(0, 1fr);
         gap: 0.35rem;
         padding: 1rem 0.625rem;
-}
-
+    }
     .manual-massages__item:hover {
         padding-right: 0.625rem;
         padding-left: 0.625rem;
-}
-
+    }
     .manual-massages__name {
         font-size: 0.8125rem;
-}
-
+    }
     .manual-massages__actions {
         flex-direction: column;
-}
-
+    }
     .manual-massages__actions .button {
         width: 100%;
-}
-
+    }
     .manual-massages__details {
         align-items: flex-start;
         gap: 0.5rem;
-}
-
+    }
     .manual-massages__price {
         font-size: 0.875rem;
+    }
 }
-}
-
 .weight-loss {
     min-height: 100vh;
     padding-top: var(--header-height);
     background: var(--color-bg-primary);
 }
-
 .weight-loss__hero {
     padding: clamp(3rem, 7vw, 6rem) var(--space-sm) var(--space-md);
     text-align: center;
     background: var(--color-bg-primary);
 }
-
 .weight-loss__container {
     width: min(100%, var(--container-max-width));
     margin-inline: auto;
 }
-
 .weight-loss__eyebrow {
     display: inline-block;
     margin-bottom: 1rem;
@@ -1594,7 +1321,6 @@ button {
     line-height: 1.5;
     text-transform: uppercase;
 }
-
 .weight-loss__title {
     max-width: 850px;
     margin: 0 auto 1rem;
@@ -1605,7 +1331,6 @@ button {
     line-height: 1.05;
     overflow-wrap: anywhere;
 }
-
 .weight-loss__intro {
     max-width: 620px;
     margin: 0 auto;
@@ -1613,23 +1338,19 @@ button {
     font-size: 0.9375rem;
     line-height: 1.8;
 }
-
 .weight-loss__content {
     padding: 0 var(--space-sm) var(--space-xl);
 }
-
 .weight-loss__layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
     gap: clamp(1.5rem, 4vw, 3.5rem);
     align-items: start;
 }
-
 .weight-loss__list {
     min-width: 0;
     border-top: 1px solid var(--color-border);
 }
-
 .weight-loss__item {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -1640,13 +1361,11 @@ button {
     border-bottom: 1px solid var(--color-border);
     transition: background-color var(--transition-base), padding var(--transition-base);
 }
-
 .weight-loss__item:hover {
     padding-right: 1rem;
     padding-left: 1rem;
     background-color: var(--color-bg-card);
 }
-
 .weight-loss__details {
     display: flex;
     align-items: center;
@@ -1654,14 +1373,12 @@ button {
     gap: 1rem;
     min-width: 0;
 }
-
 .weight-loss__price {
     flex-shrink: 0;
     color: var(--color-accent, #b99a5b);
     font-weight: 600;
     white-space: nowrap;
 }
-
 .weight-loss__name {
     min-width: 0;
     color: var(--color-text-primary);
@@ -1671,7 +1388,6 @@ button {
     line-height: 1.6;
     overflow-wrap: anywhere;
 }
-
 .weight-loss__media {
     position: sticky;
     top: calc(var(--header-height) + 1.5rem);
@@ -1679,14 +1395,12 @@ button {
     overflow: hidden;
     background: var(--color-bg-card);
 }
-
 .weight-loss__image {
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
     object-position: center;
 }
-
 .weight-loss__media-caption {
     padding: 1.25rem;
     border-top: 1px solid var(--color-border);
@@ -1696,7 +1410,6 @@ button {
     line-height: 1.35;
     text-align: center;
 }
-
 .weight-loss__actions {
     display: flex;
     flex-direction: column;
@@ -1704,11 +1417,9 @@ button {
     gap: 0.75rem;
     margin-top: 2rem;
 }
-
 .weight-loss__actions .button {
     min-width: 0;
 }
-
 .weight-loss__back {
     display: inline-flex;
     align-items: center;
@@ -1719,83 +1430,67 @@ button {
     text-decoration: none;
     transition: color var(--transition-base);
 }
-
 .weight-loss__back:hover {
     color: var(--color-accent-gold);
 }
-
 .weight-loss__back:focus-visible {
     outline: 2px solid var(--color-accent-gold);
     outline-offset: 4px;
 }
-
 @media (max-width: 760px) {
     .weight-loss__layout {
         grid-template-columns: minmax(0, 1fr);
-}
-
+    }
     .weight-loss__media {
         position: static;
         grid-row: 1;
-}
-
+    }
     .weight-loss__image {
         max-height: 360px;
         aspect-ratio: 16 / 9;
-}
+    }
     .weight-loss__media-caption {
         padding: 0.875rem 1rem;
         font-size: 1.125rem;
+    }
 }
-}
-
 @media (max-width: 480px) {
     .weight-loss__container {
         width: 100%;
-}
-
+    }
     .weight-loss__hero {
         padding-top: 2.5rem;
-}
-
+    }
     .weight-loss__title {
         font-size: 2.25rem;
-}
-
+    }
     .weight-loss__content {
         padding-right: 0.875rem;
         padding-left: 0.875rem;
-}
-
+    }
     .weight-loss__item {
         grid-template-columns: minmax(0, 1fr);
         gap: 0.35rem;
         padding: 1rem 0.625rem;
-}
-
+    }
     .weight-loss__item:hover {
         padding-right: 0.625rem;
         padding-left: 0.625rem;
-}
-
+    }
     .weight-loss__name {
         font-size: 0.8125rem;
-}
-
+    }
     .weight-loss__actions .button {
         width: 100%;
-}
-
+    }
     .weight-loss__details {
         align-items: flex-start;
         gap: 0.5rem;
-}
-
+    }
     .weight-loss__price {
         font-size: 0.875rem;
+    }
 }
-}
-
 .hair-services {
     min-height: 100vh;
     padding-top: var(--header-height);
@@ -1958,55 +1653,55 @@ button {
 @media (max-width: 760px) {
     .hair-services__layout {
         grid-template-columns: minmax(0, 1fr);
-}
+    }
     .hair-services__media {
         position: static;
         grid-row: 1;
-}
+    }
     .hair-services__image {
         max-height: 360px;
         aspect-ratio: 16 / 9;
-}
+    }
     .hair-services__media-caption {
         padding: 0.875rem 1rem;
         font-size: 1.125rem;
-}
+    }
 }
 @media (max-width: 480px) {
     .hair-services__container {
         width: 100%;
-}
+    }
     .hair-services__hero {
         padding-top: 2.5rem;
-}
+    }
     .hair-services__title {
         font-size: 2.25rem;
-}
+    }
     .hair-services__content {
         padding-right: 0.875rem;
         padding-left: 0.875rem;
-}
+    }
     .hair-services__item {
         padding: 1rem 0.625rem;
-}
+    }
     .hair-services__item:hover {
         padding-right: 0.625rem;
         padding-left: 0.625rem;
-}
+    }
     .hair-services__name {
         font-size: 0.8125rem;
-}
+    }
     .hair-services__details {
         align-items: flex-start;
         gap: 0.5rem;
-}
+    }
     .hair-services__price {
         font-size: 0.8125rem;
-}
+    }
     .hair-services__group-title {
         font-size: 1.125rem;
-}
+    }
     .hair-services__actions .button {
         width: 100%;
-}
+    }
 }
