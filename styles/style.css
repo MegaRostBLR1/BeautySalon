@@ -19,6 +19,7 @@
     --header-height: 80px;
     --transition-base: 0.3s ease;
     --radius-sm: 4px;
+    --radius-card: 12px;
 }
 *, *::before, *::after {
     box-sizing: border-box;
@@ -247,6 +248,29 @@ button {
     color: var(--color-accent-gold);
     font-style: normal;
 }
+/* Shared card corner radius */
+.service-card,
+.subscription-card,
+.portfolio__item,
+.weight-loss__media,
+.manual-massages__media,
+.hair-services__media,
+.modal__content {
+    border-radius: var(--radius-card);
+}
+.service-card__image-wrapper,
+.subscription-card__image-wrapper {
+    border-radius: var(--radius-card) var(--radius-card) 0 0;
+}
+.service-card,
+.subscription-card,
+.portfolio__item,
+.weight-loss__media,
+.manual-massages__media,
+.hair-services__media {
+    overflow: hidden;
+}
+
 /* Services */
 .services {
     padding: var(--space-xl) var(--space-sm);
