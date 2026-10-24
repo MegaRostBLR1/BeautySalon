@@ -1800,3 +1800,220 @@ button {
         font-size: 0.875rem;
     }
 }
+
+
+/* Hair Services Page */
+.hair-services {
+    min-height: 100vh;
+    padding-top: var(--header-height);
+    background: var(--color-bg-primary);
+}
+.hair-services__hero {
+    padding: clamp(3rem, 7vw, 6rem) var(--space-sm) var(--space-md);
+    text-align: center;
+}
+.hair-services__container {
+    width: min(100%, var(--container-max-width));
+    margin-inline: auto;
+}
+.hair-services__eyebrow {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--color-accent-gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+.hair-services__title {
+    max-width: 850px;
+    margin: 0 auto 1rem;
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+}
+.hair-services__intro {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.8;
+}
+.hair-services__content {
+    padding: 0 var(--space-sm) var(--space-xl);
+}
+.hair-services__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+}
+.hair-services__list {
+    min-width: 0;
+    border-top: 1px solid var(--color-border);
+}
+.hair-services__group-title {
+    margin: 1.75rem 0 0;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+.hair-services__note {
+    padding: 0.75rem;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.65;
+}
+.hair-services__item {
+    min-width: 0;
+    padding: 1.05rem 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color var(--transition-base), padding var(--transition-base);
+}
+.hair-services__item:hover {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    background-color: var(--color-bg-card);
+}
+.hair-services__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-width: 0;
+}
+.hair-services__name {
+    min-width: 0;
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+.hair-services__price {
+    flex-shrink: 0;
+    color: var(--color-accent, #b99a5b);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+.hair-services__disclaimer {
+    margin-top: 1rem;
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+    line-height: 1.65;
+}
+.hair-services__media {
+    position: sticky;
+    top: calc(var(--header-height) + 1.5rem);
+    min-width: 0;
+    overflow: hidden;
+    background: var(--color-bg-card);
+}
+.hair-services__image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center;
+}
+.hair-services__media-caption {
+    padding: 1.25rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    line-height: 1.35;
+    text-align: center;
+}
+.hair-services__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+.hair-services__actions .button {
+    min-width: 0;
+}
+.hair-services__back {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0.25rem;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+.hair-services__back:hover {
+    color: var(--color-accent-gold);
+}
+.hair-services__back:focus-visible {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 4px;
+}
+@media (max-width: 760px) {
+    .hair-services__layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .hair-services__media {
+        position: static;
+        grid-row: 1;
+    }
+    .hair-services__image {
+        max-height: 360px;
+        aspect-ratio: 16 / 9;
+    }
+    .hair-services__media-caption {
+        padding: 0.875rem 1rem;
+        font-size: 1.125rem;
+    }
+}
+@media (max-width: 480px) {
+    .hair-services__container {
+        width: 100%;
+    }
+    .hair-services__hero {
+        padding-top: 2.5rem;
+    }
+    .hair-services__title {
+        font-size: 2.25rem;
+    }
+    .hair-services__content {
+        padding-right: 0.875rem;
+        padding-left: 0.875rem;
+    }
+    .hair-services__item {
+        padding: 1rem 0.625rem;
+    }
+    .hair-services__item:hover {
+        padding-right: 0.625rem;
+        padding-left: 0.625rem;
+    }
+    .hair-services__name {
+        font-size: 0.8125rem;
+    }
+    .hair-services__details {
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .hair-services__price {
+        font-size: 0.8125rem;
+    }
+    .hair-services__group-title {
+        font-size: 1.125rem;
+    }
+    .hair-services__actions .button {
+        width: 100%;
+    }
+}
