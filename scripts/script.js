@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closeFaqItem = (item) => {
         const answer = item.querySelector('.faq__answer');
-        if (!item.open || !answer) return;
+        if (!item.open || !answer) return Promise.resolve();
 
         const previousAnimation = faqAnimations.get(item);
         if (previousAnimation) previousAnimation.cancel();
@@ -75,14 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
         );
         faqAnimations.set(item, animation);
 
-        animation.onfinish = () => {
-            if (faqAnimations.get(item) !== animation) return;
-            item.open = false;
-            answer.style.height = '';
-            answer.style.opacity = '';
-            animation.cancel();
-            faqAnimations.delete(item);
-        };
+        return new Promise(resolve => {
+            animation.onfinish = () => {
+                if (faqAnimations.get(item) !== animation) {
+                    resolve();
+                    return;
+                }
+                item.open = false;
+                answer.style.height = '';
+                answer.style.opacity = '';
+                animation.cancel();
+                faqAnimations.delete(item);
+                resolve();
+            };
+            animation.oncancel = resolve;
+        });
     };
 
     const openFaqItem = (item) => {
@@ -126,10 +133,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.open) closeFaqItem(otherItem);
+            const closingItems = [...faqItems]
+                .filter(otherItem => otherItem !== item && otherItem.open)
+                .map(closeFaqItem);
+
+            Promise.all(closingItems).then(() => {
+                if (![...faqItems].some(otherItem => otherItem !== item && otherItem.open)) {
+                    openFaqItem(item);
+                }
             });
-            openFaqItem(item);
         });
     });
 
