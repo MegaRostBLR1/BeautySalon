@@ -345,6 +345,7 @@ button {
 
 .service-card {
     background-color: var(--color-bg-card);
+    border-radius: var(--radius-sm);
     overflow: hidden;
     cursor: pointer;
 }
@@ -376,6 +377,10 @@ button {
     font-weight: 400;
     text-align: center;
     color: var(--color-text-primary);
+}
+
+.service-card:hover .service-card__caption {
+    color: var(--color-accent-gold);
 }
 
 /* ==========================================================================
