@@ -686,6 +686,7 @@ button {
     font-size: 0.95rem;
     font-weight: 300;
     line-height: 1.8;
+    overflow: hidden;
 }
 
 .faq__answer p + p {
