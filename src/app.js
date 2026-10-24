@@ -60,16 +60,77 @@ document.addEventListener("submit", event => {
   closeBookingModal();
 });
 const initFaq = () => {
-  const items = [...document.querySelectorAll(".faq__item")];
-  items.forEach(item => {
-    const summary = item.querySelector(".faq__question");
-    if (!summary || summary.dataset.initialized) return;
-    summary.dataset.initialized = "true";
-    summary.addEventListener("click", event => {
+  const faqItems = document.querySelectorAll(".faq__item");
+  const faqAnimations = new WeakMap();
+
+  const closeFaqItem = item => {
+    const answer = item.querySelector(".faq__answer");
+    if (!item.open || !answer) return Promise.resolve();
+
+    faqAnimations.get(item)?.cancel();
+    const currentHeight = answer.getBoundingClientRect().height;
+    const animation = answer.animate(
+      [{ height: `${currentHeight}px`, opacity: 1 }, { height: "0px", opacity: 0 }],
+      { duration: 240, easing: "ease", fill: "forwards" }
+    );
+    faqAnimations.set(item, animation);
+
+    return new Promise(resolve => {
+      animation.onfinish = () => {
+        if (faqAnimations.get(item) !== animation) return resolve();
+        item.open = false;
+        answer.style.height = "";
+        answer.style.opacity = "";
+        animation.cancel();
+        faqAnimations.delete(item);
+        resolve();
+      };
+      animation.oncancel = resolve;
+    });
+  };
+
+  const openFaqItem = item => {
+    const answer = item.querySelector(".faq__answer");
+    if (!answer) return;
+
+    faqAnimations.get(item)?.cancel();
+    item.open = true;
+    answer.style.height = "0px";
+    answer.style.opacity = "0";
+
+    requestAnimationFrame(() => {
+      const targetHeight = answer.scrollHeight;
+      const animation = answer.animate(
+        [{ height: "0px", opacity: 0 }, { height: `${targetHeight}px`, opacity: 1 }],
+        { duration: 260, easing: "ease", fill: "forwards" }
+      );
+      faqAnimations.set(item, animation);
+      animation.onfinish = () => {
+        if (faqAnimations.get(item) !== animation) return;
+        answer.style.height = "";
+        answer.style.opacity = "";
+        animation.cancel();
+        faqAnimations.delete(item);
+      };
+    });
+  };
+
+  faqItems.forEach(item => {
+    const question = item.querySelector(".faq__question");
+    if (!question || question.dataset.initialized) return;
+    question.dataset.initialized = "true";
+    question.addEventListener("click", event => {
       event.preventDefault();
-      const shouldOpen = !item.open;
-      items.forEach(other => { if (other !== item) other.open = false; });
-      item.open = shouldOpen;
+      if (item.open) {
+        closeFaqItem(item);
+        return;
+      }
+      const closingItems = [...faqItems]
+        .filter(other => other !== item && other.open)
+        .map(closeFaqItem);
+      Promise.all(closingItems).then(() => {
+        if (![...faqItems].some(other => other !== item && other.open)) openFaqItem(item);
+      });
     });
   });
 };
