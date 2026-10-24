@@ -1,29 +1,5 @@
-import { renderBookingModal } from "./components/modal.js";
-import { renderRoute } from "./app/router.js";
-
-document.querySelector("#app").innerHTML = `
-  <div id="app-header"></div><div id="app-content" tabindex="-1"></div><div id="app-footer"></div>
-  ${renderBookingModal()}
-`;
 
 document.addEventListener("click", event => {
-  const link = event.target.closest("a");
-  if (link?.hash.startsWith("#/")) {
-    event.preventDefault();
-    if (location.hash === link.hash) renderRoute();
-    else location.hash = link.hash;
-    return;
-  }
-
-  if (link?.hash && !link.hash.startsWith("#/")) {
-    const anchor = link.hash.slice(1);
-    if (!document.getElementById(anchor) && location.hash.startsWith("#/services/")) {
-      event.preventDefault();
-      location.hash = `#/home#${anchor}`;
-      return;
-    }
-  }
-
   const burger = event.target.closest("#burger-btn");
   if (burger) {
     const menu = document.getElementById("nav-menu");
@@ -138,5 +114,4 @@ const initFaq = () => {
     });
   });
 };
-window.addEventListener("app:route-rendered", initFaq);
-await renderRoute();
+initFaq();
