@@ -1110,11 +1110,11 @@ button {
 .hardware-massages__hero {
     padding: clamp(3rem, 7vw, 6rem) var(--space-sm) var(--space-md);
     text-align: center;
-    background: radial-gradient(ellipse at top, rgba(197, 160, 89, 0.09), transparent 65%);
+    background: var(--color-bg-primary);
 }
 
 .hardware-massages__container {
-    width: min(100% - 2rem, 1000px);
+    width: min(100%, var(--container-max-width));
     margin-inline: auto;
 }
 
@@ -1199,13 +1199,6 @@ button {
     white-space: nowrap;
 }
 
-.hardware-massages__note {
-    margin-top: 1rem;
-    color: var(--color-text-secondary);
-    font-size: 0.75rem;
-    line-height: 1.7;
-}
-
 .hardware-massages__media {
     position: sticky;
     top: calc(var(--header-height) + 1.5rem);
@@ -1240,26 +1233,6 @@ button {
 
 .hardware-massages__actions .button {
     min-width: 0;
-}
-
-.hardware-massages__back {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-    color: var(--color-text-secondary);
-    font-size: 0.8125rem;
-    transition: color var(--transition-base);
-}
-
-.hardware-massages__back:hover,
-.hardware-massages__back:focus-visible {
-    color: var(--color-accent-gold);
-}
-
-.hardware-massages__back:focus-visible {
-    outline: 2px solid var(--color-accent-gold);
-    outline-offset: 4px;
 }
 
 @media (max-width: 760px) {
