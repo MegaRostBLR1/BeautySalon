@@ -2,8 +2,8 @@ import { renderHeader } from "../components/header.js";
 import { renderFooter } from "../components/footer.js";
 
 const routes = {
-  home: { path: "pages/home.html", title: "Салон красоты «Ничего лишнего»" },
-  hardwareMassages: { path: "pages/hardware-massages.html", title: "Аппаратные массажи и цены — Ничего лишнего" }
+  home: { path: "src/pages/home.html", title: "Салон красоты «Ничего лишнего»" },
+  hardwareMassages: { path: "src/pages/hardware-massages.html", title: "Аппаратные массажи и цены — Ничего лишнего" }
 };
 
 function resolveRoute() {
