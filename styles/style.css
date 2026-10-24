@@ -343,7 +343,7 @@ button {
 }
 
 .service-card {
-    background-color: var(--color-bg-card);
+    background-color: var(--color-bg-section);
     border-radius: var(--radius-sm);
     overflow: hidden;
     cursor: pointer;
@@ -626,7 +626,7 @@ button {
    ========================================================================== */
 .faq {
     padding: var(--space-xl) var(--space-sm);
-    background-color: var(--color-bg-card);
+    background-color: var(--color-bg-primary);
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
 }
