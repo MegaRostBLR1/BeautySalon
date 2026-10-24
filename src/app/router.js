@@ -33,4 +33,6 @@ export async function renderRoute() {
     console.error(error);
   }
 }
-window.addEventListener("hashchange", renderRoute);
+window.addEventListener("hashchange", () => {
+  if (location.hash.startsWith("#/")) renderRoute();
+});
