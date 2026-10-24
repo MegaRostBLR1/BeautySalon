@@ -5,13 +5,15 @@ const routes = {
   home: { path: "src/pages/home.html", title: "Салон красоты «Ничего лишнего»" },
   hardwareMassages: { path: "src/pages/hardware-massages.html", title: "Аппаратные массажи и цены — Ничего лишнего" },
   manualMassages: { path: "src/pages/manual-massages.html", title: "Ручные массажи — Ничего лишнего" },
-  weightLoss: { path: "src/pages/weight-loss.html", title: "Программы похудения — Ничего лишнего" }
+  weightLoss: { path: "src/pages/weight-loss.html", title: "Программы похудения — Ничего лишнего" },
+  hairServices: { path: "src/pages/hair-services.html", title: "Парикмахерские услуги и цены — Ничего лишнего" }
 };
 
 function resolveRoute() {
   if (location.hash.startsWith("#/services/hardware-massages")) return routes.hardwareMassages;
   if (location.hash.startsWith("#/services/manual-massages")) return routes.manualMassages;
   if (location.hash.startsWith("#/services/weight-loss")) return routes.weightLoss;
+  if (location.hash.startsWith("#/services/hair-services")) return routes.hairServices;
   return routes.home;
 }
 
