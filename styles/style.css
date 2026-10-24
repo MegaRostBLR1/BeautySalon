@@ -2039,6 +2039,18 @@ summary:focus-visible {
     }
 }
 
+@media (max-width: 480px) {
+    .hardware-massages__name,
+    .manual-massages__name,
+    .weight-loss__name,
+    .hair-services__name {
+        font-size: 0.875rem;
+    }
+    .hair-services__price {
+        font-size: 0.875rem;
+    }
+}
+
 @media (max-width: 400px) {
     .hero-banner__subtitle {
         font-size: 0.75rem;
