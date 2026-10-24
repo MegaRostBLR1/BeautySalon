@@ -1248,7 +1248,7 @@ button {
 }
 
 .hardware-massages__back:hover {
-    color: var(--color-text-primary);
+    color: var(--color-accent-gold);
 }
 
 .hardware-massages__back:focus-visible {
