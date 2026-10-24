@@ -12,7 +12,7 @@ export function renderHeader() {
       </ul>
     </nav>
     <div class="beauty-header__actions">
-      <a href="tel:+78129990000" class="beauty-header__phone">+7 (812) 999-00-00</a>
+      <a href="tel:+79609105333" class="beauty-header__phone">+7 (960) 910 5333</a>
       <button class="beauty-header__burger" id="burger-btn" aria-expanded="false" aria-controls="nav-menu" aria-label="Открыть меню"><span class="beauty-header__burger-line"></span><span class="beauty-header__burger-line"></span></button>
     </div>
   </div>
