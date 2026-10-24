@@ -1566,3 +1566,237 @@ button {
         font-size: 0.875rem;
     }
 }
+
+
+/* ==========================================================================
+   Weight Loss Programs Page
+   ========================================================================== */
+.weight-loss {
+    min-height: 100vh;
+    padding-top: var(--header-height);
+    background: var(--color-bg-primary);
+}
+
+.weight-loss__hero {
+    padding: clamp(3rem, 7vw, 6rem) var(--space-sm) var(--space-md);
+    text-align: center;
+    background: var(--color-bg-primary);
+}
+
+.weight-loss__container {
+    width: min(100%, var(--container-max-width));
+    margin-inline: auto;
+}
+
+.weight-loss__eyebrow {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--color-accent-gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.weight-loss__title {
+    max-width: 850px;
+    margin: 0 auto 1rem;
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+}
+
+.weight-loss__intro {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.8;
+}
+
+.weight-loss__content {
+    padding: 0 var(--space-sm) var(--space-xl);
+}
+
+.weight-loss__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+}
+
+.weight-loss__list {
+    min-width: 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.weight-loss__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+    padding: 1.15rem 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color var(--transition-base), padding var(--transition-base);
+}
+
+.weight-loss__item:hover {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    background-color: var(--color-bg-card);
+}
+
+.weight-loss__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.weight-loss__price {
+    flex-shrink: 0;
+    color: var(--color-accent, #b99a5b);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.weight-loss__name {
+    min-width: 0;
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.035em;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.weight-loss__media {
+    position: sticky;
+    top: calc(var(--header-height) + 1.5rem);
+    min-width: 0;
+    overflow: hidden;
+    background: var(--color-bg-card);
+}
+
+.weight-loss__image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center;
+}
+
+.weight-loss__media-caption {
+    padding: 1.25rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.weight-loss__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.weight-loss__actions .button {
+    min-width: 0;
+}
+
+.weight-loss__back {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0.25rem;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.weight-loss__back:hover {
+    color: var(--color-accent-gold);
+}
+
+.weight-loss__back:focus-visible {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+    .weight-loss__layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .weight-loss__media {
+        position: static;
+        grid-row: 1;
+    }
+
+    .weight-loss__image {
+        max-height: 360px;
+        aspect-ratio: 16 / 9;
+    }
+
+    .weight-loss__media-caption {
+        padding: 0.875rem 1rem;
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .weight-loss__container {
+        width: 100%;
+    }
+
+    .weight-loss__hero {
+        padding-top: 2.5rem;
+    }
+
+    .weight-loss__title {
+        font-size: 2.25rem;
+    }
+
+    .weight-loss__content {
+        padding-right: 0.875rem;
+        padding-left: 0.875rem;
+    }
+
+    .weight-loss__item {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.35rem;
+        padding: 1rem 0.625rem;
+    }
+
+    .weight-loss__item:hover {
+        padding-right: 0.625rem;
+        padding-left: 0.625rem;
+    }
+
+    .weight-loss__name {
+        font-size: 0.8125rem;
+    }
+
+    .weight-loss__actions .button {
+        width: 100%;
+    }
+
+    .weight-loss__details {
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .weight-loss__price {
+        font-size: 0.875rem;
+    }
+}
