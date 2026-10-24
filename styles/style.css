@@ -1083,3 +1083,235 @@ button {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+/* ==========================================================================
+   Hardware Massages Page
+   ========================================================================== */
+.hardware-massages {
+    min-height: 100vh;
+    padding-top: var(--header-height);
+    background: var(--color-bg-primary);
+}
+
+.hardware-massages__hero {
+    padding: clamp(3rem, 7vw, 6rem) var(--space-sm) var(--space-md);
+    text-align: center;
+    background: radial-gradient(ellipse at top, rgba(197, 160, 89, 0.09), transparent 65%);
+}
+
+.hardware-massages__container {
+    width: min(100% - 2rem, 1000px);
+    margin-inline: auto;
+}
+
+.hardware-massages__eyebrow {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--color-accent-gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.hardware-massages__title {
+    max-width: 850px;
+    margin: 0 auto 1rem;
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+}
+
+.hardware-massages__intro {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.8;
+}
+
+.hardware-massages__content {
+    padding: 0 var(--space-sm) var(--space-xl);
+}
+
+.hardware-massages__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+}
+
+.hardware-massages__list {
+    min-width: 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.hardware-massages__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+    padding: 1.15rem 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color var(--transition-base), padding var(--transition-base);
+}
+
+.hardware-massages__item:hover {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    background-color: var(--color-bg-card);
+}
+
+.hardware-massages__name {
+    min-width: 0;
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.035em;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.hardware-massages__price {
+    color: var(--color-accent-gold);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.hardware-massages__note {
+    margin-top: 1rem;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    line-height: 1.7;
+}
+
+.hardware-massages__media {
+    position: sticky;
+    top: calc(var(--header-height) + 1.5rem);
+    min-width: 0;
+    overflow: hidden;
+    background: var(--color-bg-card);
+}
+
+.hardware-massages__image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hardware-massages__media-caption {
+    padding: 1.25rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.hardware-massages__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.hardware-massages__actions .button {
+    min-width: 0;
+}
+
+.hardware-massages__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+    transition: color var(--transition-base);
+}
+
+.hardware-massages__back:hover,
+.hardware-massages__back:focus-visible {
+    color: var(--color-accent-gold);
+}
+
+.hardware-massages__back:focus-visible {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+    .hardware-massages__layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hardware-massages__media {
+        position: static;
+        grid-row: 1;
+    }
+
+    .hardware-massages__image {
+        max-height: 360px;
+        aspect-ratio: 16 / 9;
+    }
+
+    .hardware-massages__media-caption {
+        padding: 0.875rem 1rem;
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hardware-massages__container {
+        width: 100%;
+    }
+
+    .hardware-massages__hero {
+        padding-top: 2.5rem;
+    }
+
+    .hardware-massages__title {
+        font-size: 2.25rem;
+    }
+
+    .hardware-massages__content {
+        padding-right: 0.875rem;
+        padding-left: 0.875rem;
+    }
+
+    .hardware-massages__item {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.35rem;
+        padding: 1rem 0.625rem;
+    }
+
+    .hardware-massages__item:hover {
+        padding-right: 0.625rem;
+        padding-left: 0.625rem;
+    }
+
+    .hardware-massages__name {
+        font-size: 0.8125rem;
+    }
+
+    .hardware-massages__price {
+        font-size: 0.875rem;
+    }
+
+    .hardware-massages__actions {
+        flex-direction: column;
+    }
+
+    .hardware-massages__actions .button {
+        width: 100%;
+    }
+}
