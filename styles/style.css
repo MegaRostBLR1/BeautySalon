@@ -325,7 +325,16 @@ button {
     font-size: 2.5rem;
     text-align: center;
     color: var(--color-accent-gold);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-sm);
+}
+
+.services__description {
+    max-width: 680px;
+    margin: 0 auto var(--space-lg);
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: center;
 }
 
 .services__grid {
