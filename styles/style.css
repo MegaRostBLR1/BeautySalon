@@ -349,10 +349,6 @@ button {
     font-weight: 500;
     line-height: 1.25;
     text-align: left;
-    transition: color var(--transition-base);
-}
-.service-card:hover .service-card__caption {
-    color: var(--color-accent-gold);
 }
 .service-card__description {
     flex: 1;
