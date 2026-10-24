@@ -2,7 +2,7 @@ import { renderBookingModal } from "./components/modal.js";
 import { renderRoute } from "./app/router.js";
 
 document.querySelector("#app").innerHTML = `
-  <div id="app-header"></div><main id="app-content" tabindex="-1"></main><div id="app-footer"></div>
+  <div id="app-header"></div><div id="app-content" tabindex="-1"></div><div id="app-footer"></div>
   ${renderBookingModal()}
 `;
 
