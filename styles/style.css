@@ -54,6 +54,7 @@ button {
     background: none;
 }
 .button {
+    border-radius: var(--radius-sm);
     display: inline-flex;
     align-items: center;
     justify-content: center;
