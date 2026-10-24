@@ -1413,6 +1413,21 @@ button {
     background-color: var(--color-bg-card);
 }
 
+.manual-massages__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.manual-massages__price {
+    flex-shrink: 0;
+    color: var(--color-accent, #b99a5b);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
 .manual-massages__name {
     min-width: 0;
     color: var(--color-text-primary);
@@ -1540,5 +1555,14 @@ button {
 
     .manual-massages__actions .button {
         width: 100%;
+    }
+
+    .manual-massages__details {
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .manual-massages__price {
+        font-size: 0.875rem;
     }
 }
