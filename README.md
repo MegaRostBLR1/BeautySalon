@@ -16,3 +16,4 @@
 ## Маршруты
 - `#/home` — главная.
 - `#/services/hardware-massages` — аппаратные массажи.
+- `#/services/manual-massages` — ручные массажи.

@@ -1328,3 +1328,217 @@ button {
         width: 100%;
     }
 }
+
+
+/* ==========================================================================
+   Manual Massages Page
+   ========================================================================== */
+.manual-massages {
+    min-height: 100vh;
+    padding-top: var(--header-height);
+    background: var(--color-bg-primary);
+}
+
+.manual-massages__hero {
+    padding: clamp(3rem, 7vw, 6rem) var(--space-sm) var(--space-md);
+    text-align: center;
+    background: var(--color-bg-primary);
+}
+
+.manual-massages__container {
+    width: min(100%, var(--container-max-width));
+    margin-inline: auto;
+}
+
+.manual-massages__eyebrow {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--color-accent-gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.manual-massages__title {
+    max-width: 850px;
+    margin: 0 auto 1rem;
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+}
+
+.manual-massages__intro {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.8;
+}
+
+.manual-massages__content {
+    padding: 0 var(--space-sm) var(--space-xl);
+}
+
+.manual-massages__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+}
+
+.manual-massages__list {
+    min-width: 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.manual-massages__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+    padding: 1.15rem 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color var(--transition-base), padding var(--transition-base);
+}
+
+.manual-massages__item:hover {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    background-color: var(--color-bg-card);
+}
+
+.manual-massages__name {
+    min-width: 0;
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.035em;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.manual-massages__media {
+    position: sticky;
+    top: calc(var(--header-height) + 1.5rem);
+    min-width: 0;
+    overflow: hidden;
+    background: var(--color-bg-card);
+}
+
+.manual-massages__image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center;
+}
+
+.manual-massages__media-caption {
+    padding: 1.25rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.manual-massages__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.manual-massages__actions .button {
+    min-width: 0;
+}
+
+.manual-massages__back {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0.25rem;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.manual-massages__back:hover {
+    color: var(--color-accent-gold);
+}
+
+.manual-massages__back:focus-visible {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+    .manual-massages__layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .manual-massages__media {
+        position: static;
+        grid-row: 1;
+    }
+
+    .manual-massages__image {
+        max-height: 360px;
+        aspect-ratio: 16 / 9;
+    }
+
+    .manual-massages__media-caption {
+        padding: 0.875rem 1rem;
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .manual-massages__container {
+        width: 100%;
+    }
+
+    .manual-massages__hero {
+        padding-top: 2.5rem;
+    }
+
+    .manual-massages__title {
+        font-size: 2.25rem;
+    }
+
+    .manual-massages__content {
+        padding-right: 0.875rem;
+        padding-left: 0.875rem;
+    }
+
+    .manual-massages__item {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.35rem;
+        padding: 1rem 0.625rem;
+    }
+
+    .manual-massages__item:hover {
+        padding-right: 0.625rem;
+        padding-left: 0.625rem;
+    }
+
+    .manual-massages__name {
+        font-size: 0.8125rem;
+    }
+
+    .manual-massages__actions {
+        flex-direction: column;
+    }
+
+    .manual-massages__actions .button {
+        width: 100%;
+    }
+}

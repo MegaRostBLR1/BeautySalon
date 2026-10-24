@@ -3,11 +3,14 @@ import { renderFooter } from "../components/footer.js";
 
 const routes = {
   home: { path: "src/pages/home.html", title: "Салон красоты «Ничего лишнего»" },
-  hardwareMassages: { path: "src/pages/hardware-massages.html", title: "Аппаратные массажи и цены — Ничего лишнего" }
+  hardwareMassages: { path: "src/pages/hardware-massages.html", title: "Аппаратные массажи и цены — Ничего лишнего" },
+  manualMassages: { path: "src/pages/manual-massages.html", title: "Ручные массажи — Ничего лишнего" }
 };
 
 function resolveRoute() {
-  return location.hash.startsWith("#/services/hardware-massages") ? routes.hardwareMassages : routes.home;
+  if (location.hash.startsWith("#/services/hardware-massages")) return routes.hardwareMassages;
+  if (location.hash.startsWith("#/services/manual-massages")) return routes.manualMassages;
+  return routes.home;
 }
 
 export async function renderRoute() {
