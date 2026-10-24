@@ -29,12 +29,17 @@ document.addEventListener("click", event => {
     const menu = document.getElementById("nav-menu");
     if (!menu) return;
     const isOpen = menu.classList.toggle("is-open");
+    menu.setAttribute("aria-hidden", String(!isOpen));
     burger.setAttribute("aria-expanded", String(isOpen));
     burger.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
   }
   if (event.target.closest(".beauty-header__link")) {
-    document.getElementById("nav-menu")?.classList.remove("is-open");
-    document.getElementById("burger-btn")?.setAttribute("aria-expanded", "false");
+    const menu = document.getElementById("nav-menu");
+    const burger = document.getElementById("burger-btn");
+    menu?.classList.remove("is-open");
+    menu?.setAttribute("aria-hidden", String(window.matchMedia("(max-width: 768px)").matches));
+    burger?.setAttribute("aria-expanded", "false");
+    burger?.setAttribute("aria-label", "Открыть меню");
   }
   const bookingTrigger = event.target.closest("#open-booking, [data-open-booking]");
   if (bookingTrigger) {
@@ -55,7 +60,21 @@ function closeBookingModal() {
   modal?.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 }
-document.addEventListener("keydown", event => { if (event.key === "Escape") closeBookingModal(); });
+document.addEventListener("keydown", event => {
+  if (event.key !== "Escape") return;
+
+  closeBookingModal();
+
+  const menu = document.getElementById("nav-menu");
+  const burger = document.getElementById("burger-btn");
+  if (menu?.classList.contains("is-open")) {
+    menu.classList.remove("is-open");
+    menu.setAttribute("aria-hidden", "true");
+    burger?.setAttribute("aria-expanded", "false");
+    burger?.setAttribute("aria-label", "Открыть меню");
+    burger?.focus();
+  }
+});
 document.addEventListener("submit", event => {
   if (event.target.id !== "booking-form") return;
   event.preventDefault();
@@ -139,4 +158,24 @@ const initFaq = () => {
   });
 };
 window.addEventListener("app:route-rendered", initFaq);
+
+const syncNavigationAccessibility = () => {
+  const menu = document.getElementById("nav-menu");
+  const burger = document.getElementById("burger-btn");
+  if (!menu) return;
+
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  if (!isMobile) {
+    menu.classList.remove("is-open");
+    menu.setAttribute("aria-hidden", "false");
+    burger?.setAttribute("aria-expanded", "false");
+    burger?.setAttribute("aria-label", "Открыть меню");
+    return;
+  }
+
+  menu.setAttribute("aria-hidden", String(!menu.classList.contains("is-open")));
+};
+window.addEventListener("app:route-rendered", syncNavigationAccessibility);
+window.addEventListener("resize", syncNavigationAccessibility);
+
 await renderRoute();
