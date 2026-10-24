@@ -96,6 +96,17 @@ button {
     box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
 }
 
+.button--secondary {
+    border: 1px solid var(--color-accent-gold);
+    color: var(--color-text-primary);
+}
+
+.button--secondary:hover,
+.button--secondary:focus-visible {
+    background-color: rgba(197, 160, 89, 0.12);
+    color: var(--color-accent-gold-hover);
+}
+
 .button--full {
     width: 100%;
 }
@@ -217,10 +228,47 @@ button {
 }
 
 .hero-banner__description {
+    max-width: 680px;
+    margin: 0 auto var(--space-md);
     font-size: 1rem;
     color: var(--color-text-secondary);
-    margin-bottom: var(--space-md);
     font-weight: 300;
+}
+
+.hero-banner__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.hero-banner__benefits {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-top: var(--space-md);
+    padding: 0;
+    list-style: none;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero-banner__benefits li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.hero-banner__benefits li + li::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--color-accent-gold);
 }
 
 /* ==========================================================================
@@ -712,6 +760,36 @@ button {
 }
 
 @media (max-width: 580px) {
+    .hero-banner {
+        min-height: 100svh;
+    }
+
+    .hero-banner__subtitle {
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        line-height: 1.7;
+    }
+
+    .hero-banner__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-banner__actions .button {
+        width: 100%;
+    }
+
+    .hero-banner__benefits {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    .hero-banner__benefits li + li::before {
+        display: none;
+    }
+
     .services__grid {
         grid-template-columns: 1fr;
     }
