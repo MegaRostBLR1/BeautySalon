@@ -1,8 +1,4 @@
-/* ==========================================================================
-   Design System Variables & Root Setup
-   ========================================================================== */
 :root {
-    /* Color Palette strictly mapped from Forensic JSON */
     --color-bg-primary: #111111;
     --color-bg-card: #1a1a1a;
     --color-bg-section: #151515;
@@ -13,25 +9,21 @@
     --color-accent-gold-hover: #d8b46d;
     --color-border: #2a2a2a;
 
-    /* Typography */
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-    /* Spacing */
-    --space-xs: 0.5rem;   /* 8px */
-    --space-sm: 1rem;     /* 16px */
-    --space-md: 2rem;     /* 32px */
-    --space-lg: 4rem;     /* 64px */
-    --space-xl: 6rem;     /* 96px */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 6rem;
 
-    /* Structural Variables */
     --container-max-width: 1200px;
     --header-height: 80px;
     --transition-base: 0.3s ease;
     --radius-sm: 4px;
 }
 
-/* Base Styles */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -70,9 +62,6 @@ button {
     background: none;
 }
 
-/* ==========================================================================
-   Buttons & UI Elements
-   ========================================================================== */
 .button {
     display: inline-flex;
     align-items: center;
@@ -115,9 +104,6 @@ button {
     width: 100%;
 }
 
-/* ==========================================================================
-   Header Component
-   ========================================================================== */
 .beauty-header {
     position: fixed;
     top: 0;
@@ -194,9 +180,6 @@ button {
     transition: transform var(--transition-base);
 }
 
-/* ==========================================================================
-   Hero Banner Block
-   ========================================================================== */
 .hero-banner {
     position: relative;
     min-height: 100vh;
@@ -275,9 +258,6 @@ button {
     background-color: var(--color-accent-gold);
 }
 
-/* ==========================================================================
-   Testimonial Block
-   ========================================================================== */
 .testimonial {
     padding: var(--space-lg) var(--space-sm);
     background-color: var(--color-bg-primary);
@@ -306,9 +286,6 @@ button {
     font-style: normal;
 }
 
-/* ==========================================================================
-   Services Grid (2x3 Matrix)
-   ========================================================================== */
 .services {
     padding: var(--space-xl) var(--space-sm);
     background-color: var(--color-bg-primary);
@@ -351,7 +328,7 @@ button {
 .service-card__image-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 66.66%; /* Landscape Aspect Ratio */
+    padding-top: 66.66%;
     overflow: hidden;
 }
 
@@ -382,9 +359,6 @@ button {
     color: var(--color-accent-gold);
 }
 
-/* ==========================================================================
-   Brands Row
-   ========================================================================== */
 .brands {
     padding: var(--space-md) var(--space-sm);
     background-color: var(--color-bg-card);
@@ -419,9 +393,6 @@ button {
     color: var(--color-accent-gold);
 }
 
-/* ==========================================================================
-   Portfolio Gallery (3x3 Matrix)
-   ========================================================================== */
 .portfolio {
     padding: var(--space-xl) var(--space-sm);
     background-color: var(--color-bg-section);
@@ -465,9 +436,6 @@ button {
     filter: brightness(1.1);
 }
 
-/* ==========================================================================
-   Footer
-   ========================================================================== */
 .beauty-footer {
     background-color: var(--color-bg-primary);
     border-top: 1px solid var(--color-border);
@@ -527,9 +495,6 @@ button {
     padding-bottom: 0;
 }
 
-/* ==========================================================================
-   Modal Component
-   ========================================================================== */
 .modal {
     position: fixed;
     top: 0;
@@ -619,11 +584,6 @@ button {
     border-color: var(--color-accent-gold);
 }
 
-
-
-/* ==========================================================================
-   FAQ Section
-   ========================================================================== */
 .faq {
     padding: var(--space-xl) var(--space-sm);
     background-color: var(--color-bg-primary);
@@ -724,29 +684,84 @@ button {
     font-weight: 500;
 }
 
-/* ==========================================================================
-   Responsive Adaptations (Mobile-First)
-   ========================================================================== */
+.hero-banner {
+    min-height: min(88vh, 760px);
+}
+
+.hero-banner__container {
+    max-width: 760px;
+}
+
+.hero-banner__title {
+    font-size: clamp(2.5rem, 6vw, 4.25rem);
+    line-height: 1.08;
+}
+
+.hero-banner__description {
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+}
+
+.services {
+    padding-top: var(--space-lg);
+}
+
+.services__description {
+    max-width: 620px;
+    margin-bottom: var(--space-md);
+}
+
+.portfolio {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+}
+
+.portfolio__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+    .portfolio__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        min-height: 100svh;
+}
+
+    .portfolio__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+}
+
+@media (max-width: 580px) {
+    .portfolio__grid {
+        grid-template-columns: minmax(0, 1fr);
+}
+}
+
 @media (max-width: 1100px) {
     .services__grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+}
 }
 
 @media (max-width: 900px) {
     .services__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+}
 
     .portfolio__grid {
         grid-template-columns: repeat(2, 1fr);
-    }
+}
 }
 
 @media (max-width: 400px) {
     .services__grid {
         grid-template-columns: minmax(0, 1fr);
-    }
+}
 }
 
 @media (max-width: 768px) {
@@ -760,97 +775,94 @@ button {
         border-bottom: 1px solid var(--color-border);
         transform: translateY(-150%);
         transition: transform var(--transition-base);
-    }
+}
 
     .beauty-header__nav.is-open {
         transform: translateY(0);
-    }
+}
 
     .beauty-header__menu {
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
-    }
+}
 
     .beauty-header__burger {
         display: flex;
-    }
+}
 
     .beauty-header__phone {
         display: none;
-    }
+}
 }
 
 @media (max-width: 580px) {
     .hero-banner {
         min-height: 100svh;
-    }
+}
 
     .hero-banner__subtitle {
         font-size: 0.7rem;
         letter-spacing: 0.16em;
         line-height: 1.7;
-    }
+}
 
     .hero-banner__actions {
         flex-direction: column;
         align-items: stretch;
-    }
+}
 
     .hero-banner__actions .button {
         width: 100%;
-    }
+}
 
     .hero-banner__benefits {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
         font-size: 0.7rem;
-    }
+}
 
     .hero-banner__benefits li + li::before {
         display: none;
-    }
+}
 
     .services__grid {
         grid-template-columns: 1fr;
-    }
+}
 
     .portfolio__grid {
         grid-template-columns: 1fr;
-    }
+}
 }
 
-/* ==========================================================================
-   Small-screen layout safeguards (down to 320px)
-   ========================================================================== */
 @media (max-width: 768px) {
     :root {
         --space-lg: 3rem;
         --space-xl: 4rem;
         --header-height: 72px;
-    }
+}
 
     .beauty-header__container {
         gap: 0.75rem;
-    }
+}
 
     .beauty-header__logo {
         min-width: 0;
         max-width: calc(100% - 56px);
-    }
+}
 
     .beauty-header__logo-text {
         display: block;
         font-size: 1.25rem;
         letter-spacing: 0.14em;
         overflow-wrap: anywhere;
-    }
+}
 
     .hero-banner {
         min-height: 100svh;
         padding: calc(var(--header-height) + var(--space-lg)) var(--space-sm) var(--space-lg);
-    }
+}
 
     .services__title,
     .portfolio__title,
@@ -859,30 +871,30 @@ button {
         line-height: 1.15;
         margin-bottom: var(--space-md);
         overflow-wrap: anywhere;
-    }
+}
 
     .services__grid,
     .portfolio__grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 1.25rem;
-    }
+}
 
     .service-card,
     .portfolio__item,
     .beauty-footer__col {
         min-width: 0;
-    }
+}
 
     .service-card__caption {
         padding: 1rem;
         font-size: 1rem;
         line-height: 1.4;
         overflow-wrap: anywhere;
-    }
+}
 
     .brands__row {
         gap: 1.25rem;
-    }
+}
 
     .brands__item {
         max-width: 100%;
@@ -890,27 +902,27 @@ button {
         letter-spacing: 0.12em;
         text-align: center;
         overflow-wrap: anywhere;
-    }
+}
 
     .beauty-footer__container {
         grid-template-columns: minmax(0, 1fr);
         gap: 1.75rem;
-    }
+}
 
     .beauty-footer__text,
     .beauty-footer__link {
         overflow-wrap: anywhere;
-    }
+}
 
     .beauty-footer__socials {
         flex-wrap: wrap;
-    }
+}
 
     .modal {
         padding: 1rem;
         overflow-y: auto;
         align-items: flex-start;
-    }
+}
 
     .modal__content {
         width: 100%;
@@ -920,38 +932,38 @@ button {
         margin: auto;
         padding: 2rem 1.25rem 1.5rem;
         overflow-y: auto;
-    }
+}
 
     .modal__title {
         padding: 0 1.5rem;
         font-size: 1.6rem;
         overflow-wrap: anywhere;
-    }
+}
 
     .booking-form__input,
     .booking-form__select {
         min-width: 0;
         font-size: 1rem;
-    }
+}
 
     .faq__question {
         padding: 1.125rem 2.25rem 1.125rem 0;
         font-size: 1.3rem;
         overflow-wrap: anywhere;
-    }
+}
 
     .faq__answer {
         padding-right: 0;
         font-size: 0.9375rem;
         overflow-wrap: anywhere;
-    }
+}
 
     .button {
         max-width: 100%;
         padding: 0.875rem 1rem;
         letter-spacing: 0.08em;
         overflow-wrap: anywhere;
-    }
+}
 }
 
 @media (max-width: 400px) {
@@ -960,135 +972,135 @@ button {
         --space-lg: 2.5rem;
         --space-xl: 3rem;
         --header-height: 64px;
-    }
+}
 
     .beauty-header__logo-text {
         font-size: 1.05rem;
         letter-spacing: 0.1em;
-    }
+}
 
     .beauty-header__burger {
         flex: 0 0 44px;
         min-width: 44px;
         padding: 8px;
-    }
+}
 
     .hero-banner {
         padding-right: 0.875rem;
         padding-left: 0.875rem;
-    }
+}
 
     .hero-banner__title {
         font-size: 2rem;
         line-height: 1.12;
         overflow-wrap: anywhere;
-    }
+}
 
     .hero-banner__subtitle {
         font-size: 0.6875rem;
         letter-spacing: 0.1em;
         overflow-wrap: anywhere;
-    }
+}
 
     .hero-banner__description {
         font-size: 0.9375rem;
-    }
+}
 
     .hero-banner__benefits {
         font-size: 0.625rem;
         letter-spacing: 0.06em;
-    }
+}
 
     .services__title,
     .portfolio__title,
     .faq__title {
         font-size: 1.875rem;
-    }
+}
 
     .testimonial__text {
         font-size: 1.375rem;
-    }
+}
 
     .testimonial__author {
         font-size: 0.75rem;
         letter-spacing: 0.08em;
         overflow-wrap: anywhere;
-    }
+}
 
     .brands__row {
         flex-direction: column;
         gap: 1rem;
-    }
+}
 
     .beauty-footer__brand {
         font-size: 1.25rem;
         overflow-wrap: anywhere;
-    }
+}
 
     .beauty-footer__bottom {
         padding: 1.25rem 0.875rem;
         overflow-wrap: anywhere;
-    }
+}
 
     .modal__content {
         padding: 1.75rem 1rem 1.25rem;
-    }
+}
 
     .faq__question {
         font-size: 1.2rem;
-    }
+}
 }
 
 @media (max-width: 360px) {
     .beauty-header__container {
         padding-right: 0.75rem;
         padding-left: 0.75rem;
-    }
+}
 
     .beauty-header__logo-text {        font-size: 0.95rem;
         letter-spacing: 0.08em;
-    }
+}
 
     .hero-banner__title {
         font-size: 1.8rem;
-    }
+}
 
     .hero-banner__actions {
         gap: 0.75rem;
-    }
+}
 
     .hero-banner__actions .button {
         padding-right: 0.625rem;
         padding-left: 0.625rem;
         font-size: 0.75rem;
         letter-spacing: 0.06em;
-    }
+}
 
     .services__title,
     .portfolio__title,
     .faq__title {
         font-size: 1.7rem;
-    }
+}
 
     .faq__question {
         padding-right: 1.75rem;
         font-size: 1.125rem;
-    }
+}
 
     .faq__question::after {
         font-size: 1.25rem;
-    }
+}
 
     .beauty-footer__heading {
         font-size: 0.875rem;
         letter-spacing: 0.07em;
-    }
+}
 }
 
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
-    }
+}
 
     *,
     *::before,
@@ -1097,13 +1109,9 @@ button {
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
-    }
+}
 }
 
-
-/* ==========================================================================
-   Hardware Massages Page
-   ========================================================================== */
 .hardware-massages {
     min-height: 100vh;
     padding-top: var(--header-height);
@@ -1262,74 +1270,70 @@ button {
 @media (max-width: 760px) {
     .hardware-massages__layout {
         grid-template-columns: minmax(0, 1fr);
-    }
+}
 
     .hardware-massages__media {
         position: static;
         grid-row: 1;
-    }
+}
 
     .hardware-massages__image {
         max-height: 360px;
         aspect-ratio: 16 / 9;
-    }
+}
 
     .hardware-massages__media-caption {
         padding: 0.875rem 1rem;
         font-size: 1.125rem;
-    }
+}
 }
 
 @media (max-width: 480px) {
     .hardware-massages__container {
         width: 100%;
-    }
+}
 
     .hardware-massages__hero {
         padding-top: 2.5rem;
-    }
+}
 
     .hardware-massages__title {
         font-size: 2.25rem;
-    }
+}
 
     .hardware-massages__content {
         padding-right: 0.875rem;
         padding-left: 0.875rem;
-    }
+}
 
     .hardware-massages__item {
         grid-template-columns: minmax(0, 1fr);
         gap: 0.35rem;
         padding: 1rem 0.625rem;
-    }
+}
 
     .hardware-massages__item:hover {
         padding-right: 0.625rem;
         padding-left: 0.625rem;
-    }
+}
 
     .hardware-massages__name {
         font-size: 0.8125rem;
-    }
+}
 
     .hardware-massages__price {
         font-size: 0.875rem;
-    }
+}
 
     .hardware-massages__actions {
         flex-direction: column;
-    }
+}
 
     .hardware-massages__actions .button {
         width: 100%;
-    }
+}
 }
 
-
-/* ==========================================================================
-   Manual Massages Page
-   ========================================================================== */
 .manual-massages {
     min-height: 100vh;
     padding-top: var(--header-height);
@@ -1494,79 +1498,75 @@ button {
 @media (max-width: 760px) {
     .manual-massages__layout {
         grid-template-columns: minmax(0, 1fr);
-    }
+}
 
     .manual-massages__media {
         position: static;
         grid-row: 1;
-    }
+}
 
     .manual-massages__image {
         max-height: 360px;
         aspect-ratio: 16 / 9;
-    }
+}
 
     .manual-massages__media-caption {
         padding: 0.875rem 1rem;
         font-size: 1.125rem;
-    }
+}
 }
 
 @media (max-width: 480px) {
     .manual-massages__container {
         width: 100%;
-    }
+}
 
     .manual-massages__hero {
         padding-top: 2.5rem;
-    }
+}
 
     .manual-massages__title {
         font-size: 2.25rem;
-    }
+}
 
     .manual-massages__content {
         padding-right: 0.875rem;
         padding-left: 0.875rem;
-    }
+}
 
     .manual-massages__item {
         grid-template-columns: minmax(0, 1fr);
         gap: 0.35rem;
         padding: 1rem 0.625rem;
-    }
+}
 
     .manual-massages__item:hover {
         padding-right: 0.625rem;
         padding-left: 0.625rem;
-    }
+}
 
     .manual-massages__name {
         font-size: 0.8125rem;
-    }
+}
 
     .manual-massages__actions {
         flex-direction: column;
-    }
+}
 
     .manual-massages__actions .button {
         width: 100%;
-    }
+}
 
     .manual-massages__details {
         align-items: flex-start;
         gap: 0.5rem;
-    }
+}
 
     .manual-massages__price {
         font-size: 0.875rem;
-    }
+}
 }
 
-
-/* ==========================================================================
-   Weight Loss Programs Page
-   ========================================================================== */
 .weight-loss {
     min-height: 100vh;
     padding-top: var(--header-height);
@@ -1732,72 +1732,70 @@ button {
 @media (max-width: 760px) {
     .weight-loss__layout {
         grid-template-columns: minmax(0, 1fr);
-    }
+}
 
     .weight-loss__media {
         position: static;
         grid-row: 1;
-    }
+}
 
     .weight-loss__image {
         max-height: 360px;
         aspect-ratio: 16 / 9;
-    }
+}
     .weight-loss__media-caption {
         padding: 0.875rem 1rem;
         font-size: 1.125rem;
-    }
+}
 }
 
 @media (max-width: 480px) {
     .weight-loss__container {
         width: 100%;
-    }
+}
 
     .weight-loss__hero {
         padding-top: 2.5rem;
-    }
+}
 
     .weight-loss__title {
         font-size: 2.25rem;
-    }
+}
 
     .weight-loss__content {
         padding-right: 0.875rem;
         padding-left: 0.875rem;
-    }
+}
 
     .weight-loss__item {
         grid-template-columns: minmax(0, 1fr);
         gap: 0.35rem;
         padding: 1rem 0.625rem;
-    }
+}
 
     .weight-loss__item:hover {
         padding-right: 0.625rem;
         padding-left: 0.625rem;
-    }
+}
 
     .weight-loss__name {
         font-size: 0.8125rem;
-    }
+}
 
     .weight-loss__actions .button {
         width: 100%;
-    }
+}
 
     .weight-loss__details {
         align-items: flex-start;
         gap: 0.5rem;
-    }
+}
 
     .weight-loss__price {
         font-size: 0.875rem;
-    }
+}
 }
 
-
-/* Hair Services Page */
 .hair-services {
     min-height: 100vh;
     padding-top: var(--header-height);
@@ -1960,116 +1958,55 @@ button {
 @media (max-width: 760px) {
     .hair-services__layout {
         grid-template-columns: minmax(0, 1fr);
-    }
+}
     .hair-services__media {
         position: static;
         grid-row: 1;
-    }
+}
     .hair-services__image {
         max-height: 360px;
         aspect-ratio: 16 / 9;
-    }
+}
     .hair-services__media-caption {
         padding: 0.875rem 1rem;
         font-size: 1.125rem;
-    }
+}
 }
 @media (max-width: 480px) {
     .hair-services__container {
         width: 100%;
-    }
+}
     .hair-services__hero {
         padding-top: 2.5rem;
-    }
+}
     .hair-services__title {
         font-size: 2.25rem;
-    }
+}
     .hair-services__content {
         padding-right: 0.875rem;
         padding-left: 0.875rem;
-    }
+}
     .hair-services__item {
         padding: 1rem 0.625rem;
-    }
+}
     .hair-services__item:hover {
         padding-right: 0.625rem;
         padding-left: 0.625rem;
-    }
+}
     .hair-services__name {
         font-size: 0.8125rem;
-    }
+}
     .hair-services__details {
         align-items: flex-start;
         gap: 0.5rem;
-    }
+}
     .hair-services__price {
         font-size: 0.8125rem;
-    }
+}
     .hair-services__group-title {
         font-size: 1.125rem;
-    }
+}
     .hair-services__actions .button {
         width: 100%;
-    }
 }
-
-/* ==========================================================================
-   Homepage Conversion Refinements
-   ========================================================================== */
-.hero-banner {
-    min-height: min(88vh, 760px);
-}
-
-.hero-banner__container {
-    max-width: 760px;
-}
-
-.hero-banner__title {
-    font-size: clamp(2.5rem, 6vw, 4.25rem);
-    line-height: 1.08;
-}
-
-.hero-banner__description {
-    max-width: 600px;
-    margin-bottom: 1.5rem;
-}
-
-.services {
-    padding-top: var(--space-lg);
-}
-
-.services__description {
-    max-width: 620px;
-    margin-bottom: var(--space-md);
-}
-
-.portfolio {
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
-}
-
-.portfolio__grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-@media (max-width: 900px) {
-    .portfolio__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-banner {
-        min-height: 100svh;
-    }
-
-    .portfolio__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 580px) {
-    .portfolio__grid {
-        grid-template-columns: minmax(0, 1fr);
-    }
 }
