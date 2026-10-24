@@ -36,8 +36,12 @@ document.addEventListener("click", event => {
     document.getElementById("nav-menu")?.classList.remove("is-open");
     document.getElementById("burger-btn")?.setAttribute("aria-expanded", "false");
   }
-  if (event.target.closest("#open-booking")) {
+  const bookingTrigger = event.target.closest("#open-booking, [data-open-booking]");
+  if (bookingTrigger) {
     const modal = document.getElementById("booking-modal");
+    const serviceSelect = document.getElementById("service-select");
+    const requestedService = bookingTrigger.dataset.bookingService;
+    if (requestedService && serviceSelect) serviceSelect.value = requestedService;
     modal?.classList.add("is-open");
     modal?.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
