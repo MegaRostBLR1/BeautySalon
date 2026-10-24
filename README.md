@@ -10,9 +10,8 @@
 - `src/app.js` — точка входа и глобальные обработчики UI.
 - `src/app/router.js` — hash-маршрутизация и загрузка страниц.
 - `src/components/` — общие header, footer и booking modal.
-- `pages/` — HTML-фрагменты страниц, загружаемые через `fetch()`.
+- `src/pages/` — HTML-фрагменты страниц, загружаемые через `fetch()`.
 - `styles/style.css` — общая дизайн-система и стили страниц.
-- `scripts/script.js` — прежняя логика, пока не подключается в SPA shell.
 
 ## Маршруты
 - `#/home` — главная.
