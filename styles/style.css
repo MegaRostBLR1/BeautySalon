@@ -280,9 +280,8 @@ button {
    ========================================================================== */
 .testimonial {
     padding: var(--space-lg) var(--space-sm);
-    background-color: var(--color-bg-section);
+    background-color: var(--color-bg-primary);
     text-align: center;
-    border-bottom: 1px solid var(--color-border);
 }
 
 .testimonial__container {
