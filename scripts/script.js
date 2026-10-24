@@ -57,6 +57,82 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // FAQ accordion: allow one open item and animate answer height.
+    const faqItems = document.querySelectorAll('.faq__item');
+    const faqAnimations = new WeakMap();
+
+    const closeFaqItem = (item) => {
+        const answer = item.querySelector('.faq__answer');
+        if (!item.open || !answer) return;
+
+        const previousAnimation = faqAnimations.get(item);
+        if (previousAnimation) previousAnimation.cancel();
+
+        const currentHeight = answer.getBoundingClientRect().height;
+        const animation = answer.animate(
+            [{ height: `${currentHeight}px`, opacity: 1 }, { height: '0px', opacity: 0 }],
+            { duration: 240, easing: 'ease', fill: 'forwards' }
+        );
+        faqAnimations.set(item, animation);
+
+        animation.onfinish = () => {
+            if (faqAnimations.get(item) !== animation) return;
+            item.open = false;
+            answer.style.height = '';
+            answer.style.opacity = '';
+            animation.cancel();
+            faqAnimations.delete(item);
+        };
+    };
+
+    const openFaqItem = (item) => {
+        const answer = item.querySelector('.faq__answer');
+        if (!answer) return;
+
+        const previousAnimation = faqAnimations.get(item);
+        if (previousAnimation) previousAnimation.cancel();
+
+        item.open = true;
+        answer.style.height = '0px';
+        answer.style.opacity = '0';
+
+        requestAnimationFrame(() => {
+            const targetHeight = answer.scrollHeight;
+            const animation = answer.animate(
+                [{ height: '0px', opacity: 0 }, { height: `${targetHeight}px`, opacity: 1 }],
+                { duration: 260, easing: 'ease', fill: 'forwards' }
+            );
+            faqAnimations.set(item, animation);
+
+            animation.onfinish = () => {
+                if (faqAnimations.get(item) !== animation) return;
+                answer.style.height = '';
+                answer.style.opacity = '';
+                animation.cancel();
+                faqAnimations.delete(item);
+            };
+        });
+    };
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq__question');
+        if (!question) return;
+
+        question.addEventListener('click', event => {
+            event.preventDefault();
+
+            if (item.open) {
+                closeFaqItem(item);
+                return;
+            }
+
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.open) closeFaqItem(otherItem);
+            });
+            openFaqItem(item);
+        });
+    });
+
     // Handle Form Submission
     if (bookingForm) {
         bookingForm.addEventListener('submit', (e) => {
