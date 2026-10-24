@@ -3,20 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-          content="Салон красоты «Ничего лишнего» — массаж, коррекция фигуры, косметология и уход за волосами. Индивидуальный подход и комфортный уход.">
+    <meta name="description" content="Салон красоты «Ничего лишнего» в Санкт-Петербурге — массаж, коррекция фигуры и уход за волосами.">
     <meta name="theme-color" content="#111111">
     <title>Салон красоты «Ничего лишнего»</title>
+    <script>
+    const siteBase = location.hostname.endsWith("github.io") ? "/BeautySalon/" : "/";
+    document.head.insertAdjacentHTML("afterbegin", '<base href="' + siteBase + '">');
+</script>
+    <link rel="canonical" href="./">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
-
 <body class="beauty-page">
-    <div id="app" aria-live="off"></div>
+    <div id="app" aria-live="off">
+        <div id="app-header">
+<header class="beauty-header" id="header">
+  <div class="beauty-header__container">
+    <a href="./" class="beauty-header__logo" aria-label="Ничего лишнего — главная"><span class="beauty-header__logo-text">НИЧЕГО ЛИШНЕГО</span></a>
+    <nav class="beauty-header__nav" id="nav-menu" aria-label="Главная навигация">
+      <ul class="beauty-header__menu">
+        <li class="beauty-header__item"><a href="./#services" class="beauty-header__link">Услуги</a></li>
+        <li class="beauty-header__item"><a href="./#portfolio" class="beauty-header__link">Наши работы</a></li>
+        <li class="beauty-header__item"><a href="./#subscriptions" class="beauty-header__link">Абонементы</a></li>
+        <li class="beauty-header__item"><a href="./#contacts" class="beauty-header__link">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="beauty-header__actions">
+      <a href="tel:+79609105333" class="beauty-header__phone">+7 (960) 910 5333</a>
+      <button class="beauty-header__burger" id="burger-btn" aria-expanded="false" aria-controls="nav-menu" aria-label="Открыть меню"><span class="beauty-header__burger-line"></span><span class="beauty-header__burger-line"></span></button>
+    </div>
+  </div>
+</header></div>
+        <div id="app-content" tabindex="-1"><main>
+    <!-- Hero Banner -->
+    <section class="hero-banner" aria-labelledby="hero-title">
+        <div class="hero-banner__overlay"></div>
+        <div class="hero-banner__container">
+            <span class="hero-banner__subtitle">Красота и уход в одном месте</span>
+            <h1 class="hero-banner__title" id="hero-title">Салон красоты <br>«Ничего лишнего»</h1>
+            <p class="hero-banner__description">Массаж, коррекция фигуры, косметология и уход за волосами. Подберём процедуры под ваши цели и пожелания.</p>
+            <div class="hero-banner__actions">
+                <button class="button button--primary" id="open-booking">Записаться онлайн</button>
+                <a class="button button--secondary" href="#services">Выбрать услугу</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services" aria-labelledby="services-title">
+        <div class="services__container">
+            <span class="services__eyebrow">Уход с вниманием к деталям</span>
+            <h2 class="services__title" id="services-title">Услуги салона</h2>
+            <p class="services__description">Выберите направление, а мы поможем подобрать процедуру с учётом ваших пожеланий и расскажем об актуальных условиях.</p>
+
+            <div class="services__grid">
+                <article class="service-card">
+                    <div class="service-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="Процедура аппаратного массажа" class="service-card__image" loading="lazy">
+                    </div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__caption">Аппаратные массажи</h3>
+                        <p class="service-card__description">Процедуры для ухода за телом. Поможем выбрать подходящий формат с учётом ваших целей.</p>
+                        <a class="button button--secondary service-card__button" href="services/hardware-massages/">Подробнее</a></button>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" alt="Сеанс ручного массажа" class="service-card__image" loading="lazy">
+                    </div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__caption">Ручные массажи</h3>
+                        <p class="service-card__description">Разные техники массажа для расслабления и работы с мышечным напряжением.</p>
+                        <a class="button button--secondary service-card__button" href="services/manual-massages/">Подробнее</a></button>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Занятие для коррекции фигуры" class="service-card__image" loading="lazy">
+                    </div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__caption">Программы похудения</h3>
+                        <p class="service-card__description">Обсудим доступные процедуры и поможем сориентироваться в программах коррекции фигуры.</p>
+                        <a class="button button--secondary service-card__button" href="services/weight-loss/">Подробнее</a></button>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Парикмахерские услуги в салоне" class="service-card__image" loading="lazy">
+                    </div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__caption">Парикмахерские услуги</h3>
+                        <p class="service-card__description">Уход за волосами и услуги для завершённого образа. Уточните доступные варианты у администратора.</p>
+                        <a class="button button--secondary service-card__button" href="services/hair-services/">Подробнее</a></button>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Косметологическая процедура" class="service-card__image" loading="lazy">
+                    </div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__caption">Косметология</h3>
+                        <p class="service-card__description">Подберём уходовую процедуру и расскажем о доступных услугах косметологии.</p>
+                        <button class="button button--secondary service-card__button" type="button" data-open-booking data-booking-service="cosmetology">Подробнее</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Subscriptions Section -->
+    <section class="subscriptions" id="subscriptions" aria-labelledby="subscriptions-title">
+        <div class="subscriptions__container">
+            <span class="subscriptions__eyebrow">Регулярный уход</span>
+            <h2 class="subscriptions__title" id="subscriptions-title">Абонементы</h2>
+            <p class="subscriptions__description">Выберите направление, а мы поможем подобрать удобный формат курса и расскажем об актуальных условиях.</p>
+
+            <div class="subscriptions__grid">
+                <article class="subscription-card">
+                    <div class="subscription-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="Процедура аппаратного массажа" class="subscription-card__image" loading="lazy">
+                    </div>
+                    <div class="subscription-card__content">
+                        <h3 class="subscription-card__title">Аппаратные массажи</h3>
+                        <p class="subscription-card__description">Абонемент для тех, кто планирует проходить аппаратные процедуры курсом.</p>
+                        <button class="button button--secondary subscription-card__button" type="button" data-open-booking data-booking-service="device-massage">Узнать условия</button>
+                    </div>
+                </article>
+
+                <article class="subscription-card">
+                    <div class="subscription-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" alt="Сеанс ручного массажа" class="subscription-card__image" loading="lazy">
+                    </div>
+                    <div class="subscription-card__content">
+                        <h3 class="subscription-card__title">Ручные массажи</h3>
+                        <p class="subscription-card__description">Подберите формат регулярных сеансов вместе со специалистом салона.</p>
+                        <button class="button button--secondary subscription-card__button" type="button" data-open-booking data-booking-service="manual-massage">Узнать условия</button>
+                    </div>
+                </article>
+
+                <article class="subscription-card">
+                    <div class="subscription-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Уход за волосами в салоне" class="subscription-card__image" loading="lazy">
+                    </div>
+                    <div class="subscription-card__content">
+                        <h3 class="subscription-card__title">Парикмахерские услуги</h3>
+                        <p class="subscription-card__description">Уточните доступные варианты абонементов на услуги для волос.</p>
+                        <button class="button button--secondary subscription-card__button" type="button" data-open-booking data-booking-service="hair">Узнать условия</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio" aria-labelledby="portfolio-title">
+        <div class="portfolio__container">
+            <h2 class="portfolio__title" id="portfolio-title">Красота и уход в деталях</h2>
+            <div class="portfolio__grid">
+                <div class="portfolio__item">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Работа макияж и укладка" class="portfolio__image" loading="lazy">
+                </div>
+                <div class="portfolio__item">
+                    <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=600&q=80" alt="Дизайн маникюра" class="portfolio__image" loading="lazy">
+                </div>
+                <div class="portfolio__item">
+                    <img src="https://images.unsplash.com/photo-1512290900673-7002ff01da91?auto=format&fit=crop&w=600&q=80" alt="Укладка волос" class="portfolio__image" loading="lazy">
+                </div>
+                <div class="portfolio__item">
+                    <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80" alt="Визаж и стиль" class="portfolio__image" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+        <div class="faq__container">
+            <h2 class="faq__title" id="faq-title">Часто задаваемые вопросы</h2>
+            <div class="faq__list">
+                <details class="faq__item">
+                    <summary class="faq__question">Как часто нужно ходить на массаж?</summary>
+                    <div class="faq__answer">
+                        <p>Частота сеансов зависит от цели, вида массажа и индивидуальных особенностей. Во время курса специалист может рекомендовать посещать массаж 2–3 раза в неделю, но оптимальный график лучше согласовать с массажистом с учётом самочувствия и реакции организма.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">Какой вид массажа мне выбрать?</summary>
+                    <div class="faq__answer">
+                        <p>Можно выбрать расслабляющий, спортивный, классический, антицеллюлитный и другие виды массажа. Сначала определите цель: снять напряжение, расслабиться или поработать с определёнными мышцами. Специалисты салона помогут подобрать подходящую процедуру с учётом ваших пожеланий и особенностей здоровья.</p>
+                        <p>Перед сеансом обсудите с массажистом ожидаемый эффект, противопоказания и технику процедуры. Не стесняйтесь задавать вопросы — так будет проще выбрать комфортный и подходящий вариант.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">Зачем вообще нужен массаж?</summary>
+                    <div class="faq__answer">
+                        <p>Массаж может помочь уменьшить мышечное напряжение, расслабиться и временно облегчить ощущение скованности. В зависимости от техники и индивидуальной реакции он также может способствовать ощущению комфорта и снижению стресса. Эффект зависит от состояния здоровья и не заменяет медицинскую помощь при заболеваниях.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">Как подготовиться к массажу?</summary>
+                    <div class="faq__answer">
+                        <ul>
+                            <li><strong>Одежда:</strong> выберите удобную одежду, которую легко снять или надеть после процедуры.</li>
+                            <li><strong>Гигиена:</strong> по возможности примите душ перед посещением.</li>
+                            <li><strong>Питание:</strong> избегайте тяжёлой еды непосредственно перед сеансом.</li>
+                            <li><strong>Самочувствие:</strong> сообщите специалисту о боли, недомогании, хронических заболеваниях, беременности или принимаемых лекарствах, если это может иметь значение.</li>
+                            <li><strong>Вопросы:</strong> если это первый массаж, заранее уточните, как проходит процедура, и сообщайте о неприятных ощущениях во время сеанса.</li>
+                        </ul>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">Какие противопоказания к массажу?</summary>
+                    <div class="faq__answer">
+                        <p>Ограничения зависят от вида массажа и состояния здоровья. Сеанс может быть противопоказан или требовать предварительной консультации при высокой температуре, острых инфекциях и воспалениях, тромбозе, повреждениях кожи или тканей, некоторых сосудистых и кожных заболеваниях, а также во время беременности. Для массажа лица и интенсивных техник действуют дополнительные ограничения.</p>
+                        <p>Перед записью сообщите специалисту о важных особенностях здоровья. Этот список не является исчерпывающим; при сомнениях обсудите возможность массажа с врачом.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">Массаж помогает похудеть?</summary>
+                    <div class="faq__answer">
+                        <p>Массаж сам по себе не обеспечивает устойчивого снижения жировой массы. Некоторые процедуры могут временно уменьшить отёчность и помочь почувствовать себя комфортнее, но для снижения веса важны питание, физическая активность и другие привычки. Массаж может быть дополнением к комплексному подходу, а не заменой ему.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+</main></div>
+        <div id="app-footer">
+<footer class="beauty-footer" id="contacts">
+  <div class="beauty-footer__container">
+    <div class="beauty-footer__col"><h2 class="beauty-footer__brand">НИЧЕГО ЛИШНЕГО</h2><p class="beauty-footer__text">Санкт-Петербург, Крестовский остров, Константиновский пр., 26</p></div>
+    <div class="beauty-footer__col"><h3 class="beauty-footer__heading">Контакты</h3><p class="beauty-footer__text"><a href="tel:+78129990000" class="beauty-footer__link">+7 (812) 999-00-00</a></p><p class="beauty-footer__text">Ежедневно с 10:00 до 22:00</p></div>
+    <div class="beauty-footer__col"><h3 class="beauty-footer__heading">Социальные сети</h3><ul class="beauty-footer__socials"><li><a href="#" class="beauty-footer__link" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="#" class="beauty-footer__link" target="_blank" rel="noopener noreferrer">Telegram</a></li></ul></div>
+  </div>
+  <div class="beauty-footer__bottom"><div class="beauty-footer__container"><p class="beauty-footer__copyright">&copy; 2026 «Ничего лишнего». Все права защищены.</p></div></div>
+</footer></div>
+        
+<div class="modal" id="booking-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+  <div class="modal__overlay" data-close></div><div class="modal__content">
+    <button class="modal__close" data-close aria-label="Закрыть модальное окно">&times;</button><h2 class="modal__title" id="modal-title">Онлайн-запись</h2>
+    <form class="booking-form" id="booking-form">
+      <div class="booking-form__group"><label for="user-name" class="booking-form__label">Ваше имя</label><input type="text" id="user-name" class="booking-form__input" required placeholder="Елена"></div>
+      <div class="booking-form__group"><label for="user-phone" class="booking-form__label">Телефон</label><input type="tel" id="user-phone" class="booking-form__input" required placeholder="+7 (___) ___-__-__"></div>
+      <div class="booking-form__group"><label for="service-select" class="booking-form__label">Услуга</label><select id="service-select" class="booking-form__select" required><option value="">Выберите услугу</option><option value="device-massage">Аппаратные массажи</option><option value="manual-massage">Ручные массажи</option><option value="weight-loss">Программы похудения</option><option value="hair">Парикмахерские услуги</option><option value="cosmetology">Косметология</option></select></div>
+      <button type="submit" class="button button--primary button--full">Записаться</button>
+    </form>
+  </div>
+</div>
+    </div>
     <script type="module" src="src/app.js"></script>
 </body>
 </html>
