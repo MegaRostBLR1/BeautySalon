@@ -16,47 +16,68 @@
     <!-- Services Section -->
     <section class="services" id="services" aria-labelledby="services-title">
         <div class="services__container">
+            <span class="services__eyebrow">Уход с вниманием к деталям</span>
             <h2 class="services__title" id="services-title">Услуги салона</h2>
-            <p class="services__description">Выберите направление и изучите услуги и цены. Если сомневаетесь, поможем подобрать подходящую процедуру.</p>
+            <p class="services__description">Выберите направление, а мы поможем подобрать процедуру с учётом ваших пожеланий и расскажем об актуальных условиях.</p>
+
             <div class="services__grid">
-                <a class="service-card" href="#/services/hardware-massages" aria-label="Посмотреть услуги и цены на аппаратные массажи">
+                <article class="service-card">
                     <div class="service-card__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="Аппаратный массаж" class="service-card__image" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="Процедура аппаратного массажа" class="service-card__image" loading="lazy">
                     </div>
-                    <h3 class="service-card__caption">Аппаратные массажи</h3>
-                </a>
-
-                <a class="service-card" href="#/services/manual-massages" aria-label="Посмотреть услуги ручного массажа">
-                    <div class="service-card__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" alt="Ручной массаж" class="service-card__image" loading="lazy">
+                    <div class="service-card__content">
+                        <h3 class="service-card__caption">Аппаратные массажи</h3>
+                        <p class="service-card__description">Процедуры для ухода за телом. Поможем выбрать подходящий формат с учётом ваших целей.</p>
+                        <button class="button button--secondary service-card__button" type="button" data-open-booking data-booking-service="device-massage">Подобрать процедуру</button>
                     </div>
-                    <h3 class="service-card__caption">Ручные массажи</h3>
-                </a>
-
-                <a class="service-card" href="#/services/weight-loss" aria-label="Посмотреть программы похудения и цены">
-                    <div class="service-card__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Программа коррекции фигуры и похудения" class="service-card__image" loading="lazy">
-                    </div>
-                    <h3 class="service-card__caption">Программы похудения</h3>
-                </a>
-
-                <a class="service-card" href="#/services/hair-services" aria-label="Посмотреть парикмахерские услуги и цены">
-                    <div class="service-card__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Парикмахерские услуги" class="service-card__image" loading="lazy">
-                    </div>
-                    <h3 class="service-card__caption">Парикмахерские услуги</h3>
-                </a>
+                </article>
 
                 <article class="service-card">
                     <div class="service-card__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Косметологические процедуры" class="service-card__image" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" alt="Сеанс ручного массажа" class="service-card__image" loading="lazy">
                     </div>
-                    <h3 class="service-card__caption">Косметология</h3>
+                    <div class="service-card__content">
+                        <h3 class="service-card__caption">Ручные массажи</h3>
+                        <p class="service-card__description">Разные техники массажа для расслабления и работы с мышечным напряжением.</p>
+                        <button class="button button--secondary service-card__button" type="button" data-open-booking data-booking-service="manual-massage">Подобрать процедуру</button>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Занятие для коррекции фигуры" class="service-card__image" loading="lazy">
+                    </div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__caption">Программы похудения</h3>
+                        <p class="service-card__description">Обсудим доступные процедуры и поможем сориентироваться в программах коррекции фигуры.</p>
+                        <button class="button button--secondary service-card__button" type="button" data-open-booking data-booking-service="weight-loss">Узнать подробнее</button>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Парикмахерские услуги в салоне" class="service-card__image" loading="lazy">
+                    </div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__caption">Парикмахерские услуги</h3>
+                        <p class="service-card__description">Уход за волосами и услуги для завершённого образа. Уточните доступные варианты у администратора.</p>
+                        <button class="button button--secondary service-card__button" type="button" data-open-booking data-booking-service="hair">Узнать подробнее</button>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Косметологическая процедура" class="service-card__image" loading="lazy">
+                    </div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__caption">Косметология</h3>
+                        <p class="service-card__description">Подберём уходовую процедуру и расскажем о доступных услугах косметологии.</p>
+                        <button class="button button--secondary service-card__button" type="button" data-open-booking data-booking-service="cosmetology">Подобрать процедуру</button>
+                    </div>
                 </article>
             </div>
         </div>
     </section>
-
 
 
     <!-- Subscriptions Section -->
