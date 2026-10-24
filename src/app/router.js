@@ -25,10 +25,15 @@ export async function renderRoute() {
     document.querySelector("#app-header").innerHTML = renderHeader();
     document.querySelector("#app-footer").innerHTML = renderFooter();
     window.dispatchEvent(new CustomEvent("app:route-rendered"));
-    if (location.hash.startsWith("#/") && location.hash.includes("#")) {
-      const anchor = location.hash.split("#").at(-1);
-      requestAnimationFrame(() => document.getElementById(anchor)?.scrollIntoView());
-    } else if (!location.hash.startsWith("#/")) {
+    if (location.hash.startsWith("#/")) {
+      const anchorSeparator = location.hash.indexOf("#", 2);
+      if (anchorSeparator !== -1) {
+        const anchor = location.hash.slice(anchorSeparator + 1);
+        requestAnimationFrame(() => document.getElementById(anchor)?.scrollIntoView());
+      } else {
+        window.scrollTo(0, 0);
+      }
+    } else {
       window.scrollTo(0, 0);
     }
   } catch (error) {
