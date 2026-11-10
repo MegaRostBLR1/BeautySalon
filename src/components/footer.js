@@ -1,7 +1,7 @@
-export function renderFooter() {
+export function renderContactsSection() {
   return `
-<section class="beauty-footer" id="contacts" aria-label="Контакты салона">
-  <div class="beauty-footer__container">
+<section class="beauty-footer__container" id="contacts" aria-label="Контакты салона">
+  <div class="beauty-footer__content">
     <div class="beauty-footer__intro">
       <span class="beauty-footer__eyebrow">Пространство заботы о себе</span>
       <h2 class="beauty-footer__brand">НИЧЕГО ЛИШНЕГО</h2>
@@ -42,12 +42,16 @@ export function renderFooter() {
       </div>
     </div>
   </div>
-
-  <div class="beauty-footer__bottom">
-    <div class="beauty-footer__bottom-container">
-      <p class="beauty-footer__copyright">&copy; 2026 «Ничего лишнего». Все права защищены.</p>
-      <a class="beauty-footer__back-to-top" href="#/">На главную <span aria-hidden="true">↑</span></a>
-    </div>
   </div>
 </section>`;
+}
+
+export function renderFooter() {
+  return `
+<footer class="beauty-footer__bottom">
+  <div class="beauty-footer__bottom-container">
+    <p class="beauty-footer__copyright">&copy; 2026 «Ничего лишнего». Все права защищены.</p>
+    <a class="beauty-footer__back-to-top" href="#/">На главную <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>`;
 }
