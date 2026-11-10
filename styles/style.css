@@ -592,6 +592,184 @@ button {
     outline: none;
     border-color: var(--color-accent-gold);
 }
+/* Gift certificate */
+.gift-certificate {
+    padding: var(--space-xl) var(--space-sm);
+    background-color: var(--color-bg-section);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+.gift-certificate__container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+    width: min(100%, var(--container-max-width));
+    margin: 0 auto;
+}
+.gift-certificate__content {
+    max-width: 500px;
+}
+.gift-certificate__eyebrow {
+    display: block;
+    margin-bottom: 0.875rem;
+    color: var(--color-accent-gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+.gift-certificate__title {
+    margin-bottom: 1rem;
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 500;
+    line-height: 1.1;
+}
+.gift-certificate__description,
+.gift-certificate__note {
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.8;
+}
+.gift-certificate__note {
+    margin-top: 0.875rem;
+    font-size: 0.8125rem;
+}
+.gift-certificate__button {
+    margin-top: 1.75rem;
+}
+.gift-certificate__visual {
+    display: grid;
+    min-width: 0;
+    place-items: center;
+    padding: clamp(1rem, 3vw, 2.5rem);
+    background:
+        radial-gradient(ellipse at 50% 45%, rgba(197, 160, 89, 0.1), transparent 68%),
+        var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+}
+.gift-certificate__card {
+    position: relative;
+    display: flex;
+    width: min(100%, 560px);
+    min-height: 310px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 2rem;
+    overflow: hidden;
+    border: 1px solid var(--color-accent-gold);
+    outline: 1px solid rgba(197, 160, 89, 0.35);
+    outline-offset: -10px;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(197, 160, 89, 0.12), transparent 60%),
+        linear-gradient(145deg, #202020, #111111 72%);
+    text-align: center;
+}
+.gift-certificate__card::before,
+.gift-certificate__card::after {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(197, 160, 89, 0.18);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+.gift-certificate__card::before {
+    top: -100px;
+    left: -75px;
+}
+.gift-certificate__card::after {
+    right: -75px;
+    bottom: -100px;
+}
+.gift-certificate__brand {
+    color: var(--color-accent-gold);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+}
+.gift-certificate__ornament {
+    margin: 1.25rem 0 0.5rem;
+    color: var(--color-accent-gold);
+    font-size: 1.125rem;
+}
+.gift-certificate__label {
+    color: var(--color-text-secondary);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+.gift-certificate__name {
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.05;
+}
+.gift-certificate__caption {
+    margin-top: 1.25rem;
+    color: var(--color-text-secondary);
+    font-size: 0.5625rem;
+    letter-spacing: 0.16em;
+}
+.gift-certificate__amount {
+    margin-top: 1.5rem;
+    color: var(--color-accent-gold);
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+}
+@media (max-width: 760px) {
+    .gift-certificate__container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+    }
+    .gift-certificate__content {
+        max-width: 650px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .gift-certificate__visual {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .gift-certificate {
+        padding: var(--space-lg) 0.875rem;
+    }
+    .gift-certificate__title {
+        font-size: 2.125rem;
+    }
+    .gift-certificate__description {
+        font-size: 0.875rem;
+    }
+    .gift-certificate__button {
+        width: 100%;
+    }
+    .gift-certificate__visual {
+        padding: 0.75rem;
+    }
+    .gift-certificate__card {
+        min-height: 260px;
+        padding: 2rem 1.25rem;
+    }
+    .gift-certificate__brand {
+        font-size: 0.5625rem;
+        letter-spacing: 0.16em;
+    }
+    .gift-certificate__caption {
+        font-size: 0.5rem;
+        letter-spacing: 0.1em;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .gift-certificate__button {
+        transition: none;
+    }
+}
+
 .faq {
     padding: var(--space-xl) var(--space-sm);
     background-color: var(--color-bg-primary);
