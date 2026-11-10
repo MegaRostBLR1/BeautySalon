@@ -228,6 +228,7 @@ const syncNavigationAccessibility = () => {
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
   if (!isMobile) {
     menu.classList.remove("is-open");
+    syncBodyScrollLock();
     menu.setAttribute("aria-hidden", "false");
     burger?.setAttribute("aria-expanded", "false");
     burger?.setAttribute("aria-label", "Открыть меню");
