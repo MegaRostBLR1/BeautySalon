@@ -187,10 +187,12 @@ const initNewsSlider = () => {
   if (!slider) return;
 
   const track = slider.querySelector(".news__track");
+  if (!track) return;
+
   const cards = [...track.querySelectorAll(".news-card")];
   const previousButton = document.querySelector("[data-news-prev]");
   const nextButton = document.querySelector("[data-news-next]");
-  if (!track || !cards.length || !previousButton || !nextButton) return;
+  if (!cards.length || !previousButton || !nextButton) return;
 
   const controller = new AbortController();
   newsSliderController = controller;
