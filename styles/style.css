@@ -1813,7 +1813,7 @@ button {
 }
 .news__controls {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 0.75rem;
     margin-top: var(--space-lg);
 }
