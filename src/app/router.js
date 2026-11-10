@@ -11,12 +11,14 @@ const routes = {
   weightLoss: { path: "src/pages/weight-loss.html", title: "Программы похудения — Ничего лишнего" },
   hairServices: { path: "src/pages/hair-services.html", title: "Парикмахерские услуги и цены — Ничего лишнего" },
   hairServiceSubscriptions: { path: "src/pages/hair-service-subscriptions.html", title: "Абонементы на парикмахерские услуги — Ничего лишнего" },
+  giftCertificates: { path: "src/pages/gift-certificates.html", title: "Подарочные сертификаты — Ничего лишнего" },
   newsArticle: { path: "src/pages/news-article.html", title: "Статья — Новости салона «Ничего лишнего»" }
 };
 
 function resolveRoute() {
   const newsMatch = location.hash.match(/^#\/news\/([^/?#]+)/);
   if (newsMatch) return { ...routes.newsArticle, articleSlug: newsMatch[1] };
+  if (location.hash.startsWith("#/gift-certificates")) return routes.giftCertificates;
   if (location.hash.startsWith("#/services/hardware-massages")) return routes.hardwareMassages;
   if (location.hash.startsWith("#/subscriptions/hardware-massages")) return routes.hardwareMassageSubscriptions;
   if (location.hash.startsWith("#/subscriptions/manual-massages")) return routes.manualMassageSubscriptions;
