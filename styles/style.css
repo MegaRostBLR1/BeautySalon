@@ -2633,3 +2633,262 @@ summary:focus-visible {
         grid-template-columns: minmax(0, 1fr);
     }
 }
+
+
+/* Gift certificates page */
+.gift-certificates {
+    min-height: 100vh;
+    padding-top: var(--header-height);
+    background-color: var(--color-bg-primary);
+}
+.gift-certificates__container {
+    width: min(100% - 2rem, var(--container-max-width));
+    margin: 0 auto;
+}
+.gift-certificates__hero {
+    padding: clamp(2.5rem, 6vw, 5rem) 0 var(--space-lg);
+    text-align: center;
+}
+.gift-certificates__back {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+    transition: color var(--transition-base);
+}
+.gift-certificates__back:hover {
+    color: var(--color-accent-gold);
+}
+.gift-certificates__back:focus-visible {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 4px;
+}
+.gift-certificates__eyebrow,
+.gift-certificates__custom-eyebrow {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--color-accent-gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+.gift-certificates__title {
+    max-width: 850px;
+    margin: 0 auto 1rem;
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.1;
+}
+.gift-certificates__intro {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.8;
+}
+.gift-certificates__content {
+    padding: 0 0 var(--space-xl);
+}
+.gift-certificates__section-title {
+    margin-bottom: var(--space-md);
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+}
+.gift-certificates__grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+}
+.gift-certificates__option {
+    display: flex;
+    min-width: 0;
+    min-height: 230px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    border: 1px solid var(--color-border);
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(197, 160, 89, 0.1), transparent 65%),
+        var(--color-bg-card);
+    color: var(--color-text-primary);
+    text-align: center;
+    transition: border-color var(--transition-base), background-color var(--transition-base), transform var(--transition-base);
+}
+.gift-certificates__option:hover,
+.gift-certificates__option:focus-visible {
+    border-color: var(--color-accent-gold);
+    background-color: #202020;
+    transform: translateY(-4px);
+}
+.gift-certificates__option:focus-visible {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 3px;
+}
+.gift-certificates__option-label {
+    color: var(--color-text-secondary);
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+.gift-certificates__option-amount {
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 3.5vw, 3rem);
+    line-height: 1;
+}
+.gift-certificates__option-amount span {
+    font-size: 0.7em;
+}
+.gift-certificates__option-action {
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--color-accent-gold);
+    color: var(--color-text-primary);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+.gift-certificates__custom {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+    align-items: center;
+    gap: 2rem;
+    margin-top: var(--space-lg);
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-section);
+}
+.gift-certificates__custom-title {
+    margin-bottom: 0.5rem;
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 1.1;
+}
+.gift-certificates__custom-description {
+    max-width: 520px;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.7;
+}
+.gift-certificates__custom-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 0.75rem;
+}
+.gift-certificates__input-label {
+    grid-column: 1 / -1;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+}
+.gift-certificates__input {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font: inherit;
+}
+.gift-certificates__input:focus-visible {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 2px;
+    border-color: var(--color-accent-gold);
+}
+.gift-certificates__input::placeholder {
+    color: #777777;
+}
+.gift-certificates__custom-button {
+    min-height: 48px;
+    padding: 0.875rem 1.25rem;
+    white-space: nowrap;
+}
+.booking-form__summary {
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-section);
+    color: var(--color-accent-gold);
+    font-size: 0.875rem;
+}
+@media (max-width: 900px) {
+    .gift-certificates__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .gift-certificates__custom {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .gift-certificates__hero {
+        padding-top: 2rem;
+        padding-bottom: var(--space-md);
+    }
+    .gift-certificates__back {
+        margin-bottom: 1.5rem;
+    }
+    .gift-certificates__title {
+        font-size: 2.25rem;
+    }
+    .gift-certificates__intro {
+        font-size: 0.875rem;
+    }
+    .gift-certificates__section-title {
+        margin-bottom: 1.5rem;
+        font-size: 1.75rem;
+    }
+    .gift-certificates__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+    }
+    .gift-certificates__option {
+        min-height: 190px;
+        gap: 0.75rem;
+        padding: 1.25rem 0.75rem;
+    }
+    .gift-certificates__option-amount {
+        font-size: 2.5rem;
+    }
+    .gift-certificates__custom {
+        gap: 1.5rem;
+        margin-top: var(--space-md);
+        padding: 1.25rem;
+    }
+    .gift-certificates__custom-title {
+        font-size: 2rem;
+    }
+    .gift-certificates__custom-form {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .gift-certificates__input-label {
+        grid-column: auto;
+    }
+    .gift-certificates__custom-button {
+        width: 100%;
+    }
+}
+@media (max-width: 360px) {
+    .gift-certificates__option-label {
+        font-size: 0.625rem;
+    }
+    .gift-certificates__option-amount {
+        font-size: 2.125rem;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .gift-certificates__option {
+        transition: none;
+    }
+}
