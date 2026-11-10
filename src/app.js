@@ -8,6 +8,22 @@ document.querySelector("#app").innerHTML = `
 
 let bookingModalTrigger = null;
 let previousBodyOverflow = "";
+let bodyScrollLocked = false;
+
+const syncBodyScrollLock = () => {
+  const isMenuOpen = document.getElementById("nav-menu")?.classList.contains("is-open");
+  const isModalOpen = document.getElementById("booking-modal")?.classList.contains("is-open");
+  const shouldLock = isMenuOpen || isModalOpen;
+
+  if (shouldLock && !bodyScrollLocked) {
+    previousBodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    bodyScrollLocked = true;
+  } else if (!shouldLock && bodyScrollLocked) {
+    document.body.style.overflow = previousBodyOverflow;
+    bodyScrollLocked = false;
+  }
+};
 
 document.addEventListener("click", event => {
   const link = event.target.closest("a");
@@ -18,6 +34,7 @@ document.addEventListener("click", event => {
     menu?.setAttribute("aria-hidden", String(window.matchMedia("(max-width: 768px)").matches));
     burger?.setAttribute("aria-expanded", "false");
     burger?.setAttribute("aria-label", "Открыть меню");
+    syncBodyScrollLock();
   }
 
   if (link?.hash.startsWith("#/")) {
@@ -42,6 +59,7 @@ document.addEventListener("click", event => {
     const menu = document.getElementById("nav-menu");
     if (!menu) return;
     const isOpen = menu.classList.toggle("is-open");
+    syncBodyScrollLock();
     menu.setAttribute("aria-hidden", String(!isOpen));
     burger.setAttribute("aria-expanded", String(isOpen));
     burger.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
@@ -54,10 +72,9 @@ document.addEventListener("click", event => {
     if (requestedService && serviceSelect) serviceSelect.value = requestedService;
     if (modal) {
       bookingModalTrigger = bookingTrigger;
-      previousBodyOverflow = document.body.style.overflow;
       modal.classList.add("is-open");
+      syncBodyScrollLock();
       modal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
       modal.querySelector("#user-name")?.focus();
     }
   }
@@ -69,8 +86,8 @@ function closeBookingModal() {
   if (!modal?.classList.contains("is-open")) return;
 
   modal.classList.remove("is-open");
+  syncBodyScrollLock();
   modal.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = previousBodyOverflow;
   if (bookingModalTrigger?.isConnected) bookingModalTrigger.focus();
   bookingModalTrigger = null;
 }
@@ -89,6 +106,7 @@ document.addEventListener("keydown", event => {
     const burger = document.getElementById("burger-btn");
     if (menu?.classList.contains("is-open")) {
       menu.classList.remove("is-open");
+      syncBodyScrollLock();
       menu.setAttribute("aria-hidden", "true");
       burger?.setAttribute("aria-expanded", "false");
       burger?.setAttribute("aria-label", "Открыть меню");
