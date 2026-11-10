@@ -2905,7 +2905,12 @@ summary:focus-visible {
 
 /* Footer redesign */
 .beauty-footer__container {
-    padding-top: clamp(3.5rem, 7vw, 6rem);
+    max-width: none;
+    margin: 0;
+    padding: clamp(3.5rem, 7vw, 6rem) 0 0;
+    display: block;
+    grid-template-columns: none;
+    gap: 0;
     background:
         radial-gradient(ellipse at 12% 0%, rgba(197, 160, 89, 0.08), transparent 38%),
         #101010;
