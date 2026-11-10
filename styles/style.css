@@ -1238,7 +1238,7 @@ button {
 }
 .manual-massages__price {
     flex-shrink: 0;
-    color: var(--color-accent, #b99a5b);
+    color: var(--color-accent-gold);
     font-weight: 600;
     white-space: nowrap;
 }
@@ -1435,7 +1435,7 @@ button {
 }
 .weight-loss__price {
     flex-shrink: 0;
-    color: var(--color-accent, #b99a5b);
+    color: var(--color-accent-gold);
     font-weight: 600;
     white-space: nowrap;
 }
@@ -1649,7 +1649,7 @@ button {
 }
 .hair-services__price {
     flex-shrink: 0;
-    color: var(--color-accent, #b99a5b);
+    color: var(--color-accent-gold);
     font-size: 0.9375rem;
     font-weight: 600;
     line-height: 1.4;
