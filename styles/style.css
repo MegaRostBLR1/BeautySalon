@@ -666,14 +666,10 @@ button {
     color: var(--color-text-primary);
     font-weight: 500;
 }
-@media (max-width: 900px) {
-}
 @media (max-width: 768px) {
     .hero-banner {
         min-height: 100svh;
     }
-}
-@media (max-width: 580px) {
 }
 @media (max-width: 1100px) {
     .services__grid {
@@ -783,7 +779,10 @@ button {
         margin-bottom: var(--space-md);
         overflow-wrap: anywhere;
     }
-    .services__grid,
+    .services__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+    }
     .service-card,
     .beauty-footer__col {
         min-width: 0;
