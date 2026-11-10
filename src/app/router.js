@@ -1,5 +1,5 @@
 import { renderHeader } from "../components/header.js";
-import { renderFooter } from "../components/footer.js";
+import { renderContactsSection, renderFooter } from "../components/footer.js";
 import { newsArticles } from "../data/news.js";
 
 const routes = {
@@ -69,15 +69,13 @@ export async function renderRoute() {
     const footerOutlet = document.querySelector("#app-footer");
     if (route.path === routes.home.path) {
       const faq = outlet.querySelector("#faq");
-      const footerWrapper = document.createElement("div");
-      footerWrapper.innerHTML = renderFooter();
-      const contacts = footerWrapper.firstElementChild;
+      const contactsWrapper = document.createElement("div");
+      contactsWrapper.innerHTML = renderContactsSection();
+      const contacts = contactsWrapper.firstElementChild;
       if (!faq || !contacts) throw new Error("Не удалось разместить контакты перед FAQ");
       faq.before(contacts);
-      footerOutlet.innerHTML = "";
-    } else {
-      footerOutlet.innerHTML = renderFooter();
     }
+    footerOutlet.innerHTML = renderFooter();
     window.dispatchEvent(new CustomEvent("app:route-rendered"));
     if (location.hash.startsWith("#/")) {
       const anchorSeparator = location.hash.indexOf("#", 2);
