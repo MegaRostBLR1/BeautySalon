@@ -2803,6 +2803,15 @@ summary:focus-visible {
     color: var(--color-text-primary);
     font: inherit;
 }
+.gift-certificates__input {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+.gift-certificates__input::-webkit-inner-spin-button,
+.gift-certificates__input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 .gift-certificates__input:focus-visible {
     outline: 2px solid var(--color-accent-gold);
     outline-offset: 2px;
