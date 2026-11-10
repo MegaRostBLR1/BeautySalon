@@ -6,6 +6,9 @@ document.querySelector("#app").innerHTML = `
   ${renderBookingModal()}
 `;
 
+let bookingModalTrigger = null;
+let previousBodyOverflow = "";
+
 document.addEventListener("click", event => {
   const link = event.target.closest("a");
   if (link?.classList.contains("beauty-header__link")) {
@@ -26,7 +29,8 @@ document.addEventListener("click", event => {
 
   if (link?.hash && !link.hash.startsWith("#/")) {
     const anchor = link.hash.slice(1);
-    if (!document.getElementById(anchor) && location.hash.startsWith("#/services/")) {
+    const isNestedRoute = location.hash.startsWith("#/") && !location.hash.startsWith("#/home");
+    if (anchor && !document.getElementById(anchor) && isNestedRoute) {
       event.preventDefault();
       location.hash = `#/home#${anchor}`;
       return;
@@ -48,32 +52,70 @@ document.addEventListener("click", event => {
     const serviceSelect = document.getElementById("service-select");
     const requestedService = bookingTrigger.dataset.bookingService;
     if (requestedService && serviceSelect) serviceSelect.value = requestedService;
-    modal?.classList.add("is-open");
-    modal?.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+    if (modal) {
+      bookingModalTrigger = bookingTrigger;
+      previousBodyOverflow = document.body.style.overflow;
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      modal.querySelector("#user-name")?.focus();
+    }
   }
   if (event.target.closest("[data-close]")) closeBookingModal();
 });
 
 function closeBookingModal() {
   const modal = document.getElementById("booking-modal");
-  modal?.classList.remove("is-open");
-  modal?.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
+  if (!modal?.classList.contains("is-open")) return;
+
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = previousBodyOverflow;
+  if (bookingModalTrigger?.isConnected) bookingModalTrigger.focus();
+  bookingModalTrigger = null;
 }
+
 document.addEventListener("keydown", event => {
-  if (event.key !== "Escape") return;
+  const modal = document.getElementById("booking-modal");
+  const isModalOpen = modal?.classList.contains("is-open");
 
-  closeBookingModal();
+  if (event.key === "Escape") {
+    if (isModalOpen) {
+      closeBookingModal();
+      return;
+    }
 
-  const menu = document.getElementById("nav-menu");
-  const burger = document.getElementById("burger-btn");
-  if (menu?.classList.contains("is-open")) {
-    menu.classList.remove("is-open");
-    menu.setAttribute("aria-hidden", "true");
-    burger?.setAttribute("aria-expanded", "false");
-    burger?.setAttribute("aria-label", "Открыть меню");
-    burger?.focus();
+    const menu = document.getElementById("nav-menu");
+    const burger = document.getElementById("burger-btn");
+    if (menu?.classList.contains("is-open")) {
+      menu.classList.remove("is-open");
+      menu.setAttribute("aria-hidden", "true");
+      burger?.setAttribute("aria-expanded", "false");
+      burger?.setAttribute("aria-label", "Открыть меню");
+      burger?.focus();
+    }
+    return;
+  }
+
+  if (event.key !== "Tab" || !isModalOpen || !modal) return;
+
+  const focusable = [...modal.querySelectorAll(
+    'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  )].filter(element => element.getClientRects().length > 0);
+  if (!focusable.length) {
+    event.preventDefault();
+    modal.focus();
+    return;
+  }
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
   }
 });
 document.addEventListener("submit", event => {

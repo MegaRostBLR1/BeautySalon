@@ -504,10 +504,11 @@ button {
 }
 .modal {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100dvh;
+    padding: 1rem;
+    overflow-y: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -534,8 +535,9 @@ button {
     background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
     padding: 2.5rem;
-    width: 100%;
-    max-width: 450px;
+    width: min(100%, 450px);
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
     z-index: 10;
     border-radius: var(--radius-sm);
 }
@@ -1927,8 +1929,9 @@ button {
         min-width: 0;
     }
     .news__eyebrow {
-        font-size: 0.625rem;
-        letter-spacing: 0.12em;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        line-height: 1.5;
     }
     .news__title {
         font-size: 2rem;
@@ -2077,8 +2080,9 @@ button {
         padding-left: 1rem;
     }
     .news-article__eyebrow {
-        font-size: 0.625rem;
-        letter-spacing: 0.12em;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        line-height: 1.5;
     }
     .news-article__title {
         font-size: 2.25rem;
