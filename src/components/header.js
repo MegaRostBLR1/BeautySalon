@@ -7,6 +7,7 @@ export function renderHeader() {
       <ul class="beauty-header__menu">
         <li class="beauty-header__item"><a href="#services" class="beauty-header__link">Услуги</a></li>
         <li class="beauty-header__item"><a href="#/home#news" class="beauty-header__link">Статьи</a></li>
+        <li class="beauty-header__item"><a href="#/home#gift-certificate" class="beauty-header__link">Сертификат</a></li>
         <li class="beauty-header__item"><a href="#subscriptions" class="beauty-header__link">Абонементы</a></li>
         <li class="beauty-header__item"><a href="#contacts" class="beauty-header__link">Контакты</a></li>
       </ul>
