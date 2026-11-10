@@ -13,7 +13,7 @@ const routes = {
 
 function resolveRoute() {
   const newsMatch = location.hash.match(/^#\/news\/([^/?#]+)/);
-  if (newsMatch) return { ...routes.newsArticle, articleSlug: decodeURIComponent(newsMatch[1]) };
+  if (newsMatch) return { ...routes.newsArticle, articleSlug: newsMatch[1] };
   if (location.hash.startsWith("#/services/hardware-massages")) return routes.hardwareMassages;
   if (location.hash.startsWith("#/services/manual-massages")) return routes.manualMassages;
   if (location.hash.startsWith("#/services/weight-loss")) return routes.weightLoss;
