@@ -42,7 +42,6 @@ export function renderContactsSection() {
       </div>
     </div>
   </div>
-  </div>
 </section>`;
 }
 
