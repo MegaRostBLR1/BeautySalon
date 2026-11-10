@@ -1,6 +1,6 @@
 export function renderFooter() {
   return `
-<footer class="beauty-footer" id="contacts">
+<section class="beauty-footer" id="contacts" aria-label="Контакты салона">
   <div class="beauty-footer__container">
     <div class="beauty-footer__intro">
       <span class="beauty-footer__eyebrow">Пространство заботы о себе</span>
@@ -49,5 +49,5 @@ export function renderFooter() {
       <a class="beauty-footer__back-to-top" href="#/">На главную <span aria-hidden="true">↑</span></a>
     </div>
   </div>
-</footer>`;
+</section>`;
 }
