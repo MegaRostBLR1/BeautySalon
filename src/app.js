@@ -8,6 +8,15 @@ document.querySelector("#app").innerHTML = `
 
 document.addEventListener("click", event => {
   const link = event.target.closest("a");
+  if (link?.classList.contains("beauty-header__link")) {
+    const menu = document.getElementById("nav-menu");
+    const burger = document.getElementById("burger-btn");
+    menu?.classList.remove("is-open");
+    menu?.setAttribute("aria-hidden", String(window.matchMedia("(max-width: 768px)").matches));
+    burger?.setAttribute("aria-expanded", "false");
+    burger?.setAttribute("aria-label", "Открыть меню");
+  }
+
   if (link?.hash.startsWith("#/")) {
     event.preventDefault();
     if (location.hash === link.hash) renderRoute();
@@ -32,14 +41,6 @@ document.addEventListener("click", event => {
     menu.setAttribute("aria-hidden", String(!isOpen));
     burger.setAttribute("aria-expanded", String(isOpen));
     burger.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
-  }
-  if (event.target.closest(".beauty-header__link")) {
-    const menu = document.getElementById("nav-menu");
-    const burger = document.getElementById("burger-btn");
-    menu?.classList.remove("is-open");
-    menu?.setAttribute("aria-hidden", String(window.matchMedia("(max-width: 768px)").matches));
-    burger?.setAttribute("aria-expanded", "false");
-    burger?.setAttribute("aria-label", "Открыть меню");
   }
   const bookingTrigger = event.target.closest("#open-booking, [data-open-booking]");
   if (bookingTrigger) {
