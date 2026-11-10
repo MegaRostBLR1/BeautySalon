@@ -1767,6 +1767,182 @@ button {
 }
 
 
+/* News */
+.news {
+    padding: var(--space-xl) var(--space-sm);
+    background-color: var(--color-bg-section);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+.news__container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+.news__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: var(--space-lg);
+}
+.news__intro {
+    max-width: 650px;
+}
+.news__eyebrow {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--color-accent-gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.news__title {
+    margin-bottom: var(--space-sm);
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.15;
+    text-align: center;
+}
+.news__description {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: center;
+}
+.news__controls {
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.75rem;
+}
+.news__control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--color-accent-gold);
+    color: var(--color-accent-gold);
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: color var(--transition-base), background-color var(--transition-base), opacity var(--transition-base);
+}
+.news__control:hover:not(:disabled) {
+    background-color: var(--color-accent-gold);
+    color: var(--color-bg-primary);
+}
+.news__control:disabled {
+    cursor: not-allowed;
+    opacity: 0.35;
+}
+.news__control:focus-visible {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 4px;
+}
+.news__viewport {
+    overflow: hidden;
+}
+.news__track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.4s ease;
+    will-change: transform;
+}
+.news-card {
+    display: flex;
+    flex: 0 0 calc((100% - 4rem) / 3);
+    min-width: 0;
+    min-height: 250px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-card);
+}
+.news-card__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+}
+.news-card__date {
+    margin-bottom: 1rem;
+    color: var(--color-accent-gold);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+.news-card__title {
+    margin-bottom: 0.75rem;
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+.news-card__description {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.7;
+}
+@media (max-width: 900px) {
+    .news__header {
+        align-items: center;
+    }
+    .news__track {
+        gap: 1.25rem;
+    }
+    .news-card {
+        flex-basis: calc((100% - 1.25rem) / 2);
+    }
+}
+@media (max-width: 600px) {
+    .news {
+        padding: var(--space-lg) 0.875rem;
+    }
+    .news__header {
+        align-items: flex-end;
+        gap: 1rem;
+        margin-bottom: var(--space-md);
+    }
+    .news__intro {
+        min-width: 0;
+    }
+    .news__eyebrow {
+        font-size: 0.625rem;
+        letter-spacing: 0.12em;
+    }
+    .news__title {
+        font-size: 2rem;
+    }
+    .news__description {
+        font-size: 0.875rem;
+    }
+    .news__controls {
+        gap: 0.5rem;
+    }
+    .news__control {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+    .news__track {
+        gap: 1rem;
+    }
+    .news-card {
+        flex-basis: 100%;
+        min-height: 230px;
+    }
+    .news-card__content {
+        padding: 1.25rem;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .news__track {
+        transition: none;
+    }
+}
+
 /* Subscriptions */
 .subscriptions {
     padding: var(--space-xl) var(--space-sm);
