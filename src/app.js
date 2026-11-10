@@ -178,4 +178,50 @@ const syncNavigationAccessibility = () => {
 window.addEventListener("app:route-rendered", syncNavigationAccessibility);
 window.addEventListener("resize", syncNavigationAccessibility);
 
+let newsSliderController;
+
+const initNewsSlider = () => {
+  newsSliderController?.abort();
+
+  const slider = document.querySelector("[data-news-slider]");
+  if (!slider) return;
+
+  const track = slider.querySelector(".news__track");
+  const cards = [...track.querySelectorAll(".news-card")];
+  const previousButton = document.querySelector("[data-news-prev]");
+  const nextButton = document.querySelector("[data-news-next]");
+  if (!track || !cards.length || !previousButton || !nextButton) return;
+
+  const controller = new AbortController();
+  newsSliderController = controller;
+  let currentIndex = 0;
+
+  const updateSlider = () => {
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 0;
+    const visibleCount = Math.max(1, Math.floor((slider.clientWidth + gap) / (cardWidth + gap)));
+    const maxIndex = Math.max(0, cards.length - visibleCount);
+
+    currentIndex = Math.min(currentIndex, maxIndex);
+    track.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+    previousButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === maxIndex;
+  };
+
+  previousButton.addEventListener("click", () => {
+    currentIndex = Math.max(0, currentIndex - 1);
+    updateSlider();
+  }, { signal: controller.signal });
+
+  nextButton.addEventListener("click", () => {
+    currentIndex += 1;
+    updateSlider();
+  }, { signal: controller.signal });
+
+  window.addEventListener("resize", updateSlider, { signal: controller.signal });
+  updateSlider();
+};
+
+window.addEventListener("app:route-rendered", initNewsSlider);
+
 await renderRoute();
