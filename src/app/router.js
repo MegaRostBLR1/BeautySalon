@@ -66,7 +66,18 @@ export async function renderRoute() {
     }
     document.title = article ? `${article.title} — Новости салона «Ничего лишнего»` : route.title;
     document.querySelector("#app-header").innerHTML = renderHeader();
-    document.querySelector("#app-footer").innerHTML = renderFooter();
+    const footerOutlet = document.querySelector("#app-footer");
+    if (route.path === routes.home.path) {
+      const faq = outlet.querySelector("#faq");
+      const footerWrapper = document.createElement("div");
+      footerWrapper.innerHTML = renderFooter();
+      const contacts = footerWrapper.firstElementChild;
+      if (!faq || !contacts) throw new Error("Не удалось разместить контакты перед FAQ");
+      faq.before(contacts);
+      footerOutlet.innerHTML = "";
+    } else {
+      footerOutlet.innerHTML = renderFooter();
+    }
     window.dispatchEvent(new CustomEvent("app:route-rendered"));
     if (location.hash.startsWith("#/")) {
       const anchorSeparator = location.hash.indexOf("#", 2);
