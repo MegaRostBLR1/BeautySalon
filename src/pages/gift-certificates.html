@@ -1,0 +1,56 @@
+<main class="gift-certificates">
+    <section class="gift-certificates__hero" aria-labelledby="gift-certificates-title">
+        <div class="gift-certificates__container">
+            <a class="gift-certificates__back" href="#/home#gift-certificate">← Вернуться назад</a>
+            <span class="gift-certificates__eyebrow">Ничего лишнего · Подарок с заботой</span>
+            <h1 class="gift-certificates__title" id="gift-certificates-title">Выберите подарочный сертификат</h1>
+            <p class="gift-certificates__intro">Подарите близким возможность выбрать время и процедуру для себя. Выберите подходящий номинал или укажите свою сумму.</p>
+        </div>
+    </section>
+
+    <section class="gift-certificates__content" aria-labelledby="gift-certificates-options-title">
+        <div class="gift-certificates__container">
+            <h2 class="gift-certificates__section-title" id="gift-certificates-options-title">Выберите номинал</h2>
+            <div class="gift-certificates__grid">
+                <button class="gift-certificates__option" type="button" data-open-booking data-booking-service="gift-certificate" data-certificate-amount="100" aria-label="Оформить сертификат на 100 рублей">
+                    <span class="gift-certificates__option-label">Подарочный сертификат</span>
+                    <span class="gift-certificates__option-amount">100 <span>₽</span></span>
+                    <span class="gift-certificates__option-action">Выбрать</span>
+                </button>
+                <button class="gift-certificates__option" type="button" data-open-booking data-booking-service="gift-certificate" data-certificate-amount="200" aria-label="Оформить сертификат на 200 рублей">
+                    <span class="gift-certificates__option-label">Подарочный сертификат</span>
+                    <span class="gift-certificates__option-amount">200 <span>₽</span></span>
+                    <span class="gift-certificates__option-action">Выбрать</span>
+                </button>
+                <button class="gift-certificates__option" type="button" data-open-booking data-booking-service="gift-certificate" data-certificate-amount="300" aria-label="Оформить сертификат на 300 рублей">
+                    <span class="gift-certificates__option-label">Подарочный сертификат</span>
+                    <span class="gift-certificates__option-amount">300 <span>₽</span></span>
+                    <span class="gift-certificates__option-action">Выбрать</span>
+                </button>
+                <button class="gift-certificates__option" type="button" data-open-booking data-booking-service="gift-certificate" data-certificate-amount="400" aria-label="Оформить сертификат на 400 рублей">
+                    <span class="gift-certificates__option-label">Подарочный сертификат</span>
+                    <span class="gift-certificates__option-amount">400 <span>₽</span></span>
+                    <span class="gift-certificates__option-action">Выбрать</span>
+                </button>
+                <button class="gift-certificates__option" type="button" data-open-booking data-booking-service="gift-certificate" data-certificate-amount="500" aria-label="Оформить сертификат на 500 рублей">
+                    <span class="gift-certificates__option-label">Подарочный сертификат</span>
+                    <span class="gift-certificates__option-amount">500 <span>₽</span></span>
+                    <span class="gift-certificates__option-action">Выбрать</span>
+                </button>
+            </div>
+
+            <div class="gift-certificates__custom">
+                <div class="gift-certificates__custom-content">
+                    <span class="gift-certificates__custom-eyebrow">Индивидуальный номинал</span>
+                    <h2 class="gift-certificates__custom-title">Своя сумма</h2>
+                    <p class="gift-certificates__custom-description">Укажите сумму, на которую хотите оформить подарочный сертификат.</p>
+                </div>
+                <div class="gift-certificates__custom-form">
+                    <label class="gift-certificates__input-label" for="custom-certificate-amount">Сумма сертификата, ₽</label>
+                    <input class="gift-certificates__input" id="custom-certificate-amount" name="certificate-amount" type="number" min="1" step="1" inputmode="numeric" placeholder="Например, 750" required>
+                    <button class="button button--primary gift-certificates__custom-button" type="button" data-open-booking data-booking-service="gift-certificate" data-certificate-amount-input="custom-certificate-amount">Продолжить</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
