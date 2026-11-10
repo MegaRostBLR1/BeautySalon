@@ -89,6 +89,12 @@ document.addEventListener("click", event => {
     }
 
     if (modal) {
+      const modalTitle = modal.querySelector("#modal-title");
+      if (modalTitle) {
+        modalTitle.textContent = requestedService === "gift-certificate"
+          ? "Заявка на подарочный сертификат"
+          : "Онлайн-запись";
+      }
       bookingModalTrigger = bookingTrigger;
       modal.classList.add("is-open");
       syncBodyScrollLock();
