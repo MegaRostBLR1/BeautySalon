@@ -15,5 +15,6 @@
 
 ## Маршруты
 - `#/home` — главная.
+- `#/gift-certificates` — выбор номинала подарочного сертификата.
 - `#/services/hardware-massages` — аппаратные массажи.
 - `#/services/manual-massages` — ручные массажи.
