@@ -1,15 +1,19 @@
 import { renderHeader } from "../components/header.js";
 import { renderFooter } from "../components/footer.js";
+import { newsArticles } from "../data/news.js";
 
 const routes = {
   home: { path: "src/pages/home.html", title: "Салон красоты «Ничего лишнего»" },
   hardwareMassages: { path: "src/pages/hardware-massages.html", title: "Аппаратные массажи и цены — Ничего лишнего" },
   manualMassages: { path: "src/pages/manual-massages.html", title: "Ручные массажи — Ничего лишнего" },
   weightLoss: { path: "src/pages/weight-loss.html", title: "Программы похудения — Ничего лишнего" },
-  hairServices: { path: "src/pages/hair-services.html", title: "Парикмахерские услуги и цены — Ничего лишнего" }
+  hairServices: { path: "src/pages/hair-services.html", title: "Парикмахерские услуги и цены — Ничего лишнего" },
+  newsArticle: { path: "src/pages/news-article.html", title: "Статья — Новости салона «Ничего лишнего»" }
 };
 
 function resolveRoute() {
+  const newsMatch = location.hash.match(/^#\/news\/([^/?#]+)/);
+  if (newsMatch) return { ...routes.newsArticle, articleSlug: decodeURIComponent(newsMatch[1]) };
   if (location.hash.startsWith("#/services/hardware-massages")) return routes.hardwareMassages;
   if (location.hash.startsWith("#/services/manual-massages")) return routes.manualMassages;
   if (location.hash.startsWith("#/services/weight-loss")) return routes.weightLoss;
@@ -19,13 +23,40 @@ function resolveRoute() {
 
 export async function renderRoute() {
   const route = resolveRoute();
+  const article = route.articleSlug ? newsArticles.find(item => item.slug === route.articleSlug) : null;
   const outlet = document.querySelector("#app-content");
   if (!outlet) return;
   try {
+    if (route.articleSlug && !article) {
+      outlet.innerHTML = '<main class="news-article__not-found"><h1>Статья не найдена</h1><a href="#/home#news">Вернуться к новостям</a></main>';
+      document.title = "Статья не найдена — Ничего лишнего";
+      document.querySelector("#app-header").innerHTML = renderHeader();
+      document.querySelector("#app-footer").innerHTML = renderFooter();
+      window.dispatchEvent(new CustomEvent("app:route-rendered"));
+      window.scrollTo(0, 0);
+      return;
+    }
     const response = await fetch(route.path);
     if (!response.ok) throw new Error(`Не удалось загрузить страницу: ${response.status}`);
     outlet.innerHTML = await response.text();
-    document.title = route.title;
+    if (article) {
+      const image = outlet.querySelector("[data-article-image]");
+      const title = outlet.querySelector("[data-article-title]");
+      const date = outlet.querySelector("[data-article-date]");
+      const body = outlet.querySelector("[data-article-body]");
+      if (!image || !title || !date || !body) throw new Error("Шаблон статьи имеет неверную структуру");
+      image.src = article.image;
+      image.alt = article.imageAlt;
+      title.textContent = article.title;
+      date.dateTime = article.dateTime;
+      date.textContent = article.date;
+      article.paragraphs.forEach(text => {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = text;
+        body.append(paragraph);
+      });
+    }
+    document.title = article ? `${article.title} — Новости салона «Ничего лишнего»` : route.title;
     document.querySelector("#app-header").innerHTML = renderHeader();
     document.querySelector("#app-footer").innerHTML = renderFooter();
     window.dispatchEvent(new CustomEvent("app:route-rendered"));
