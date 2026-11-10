@@ -84,7 +84,7 @@ document.addEventListener("click", event => {
     if (amountSummary) {
       amountSummary.hidden = requestedService !== "gift-certificate" || !certificateAmount;
       amountSummary.textContent = certificateAmount
-        ? `Вы выбрали сертификат на ${Number(certificateAmount).toLocaleString("ru-RU")} ₽`
+        ? `Вы выбрали сертификат на ${Number(certificateAmount).toLocaleString("ru-RU")} Br`
         : "";
     }
 
@@ -165,7 +165,7 @@ document.addEventListener("submit", event => {
   event.preventDefault();
   const certificateAmount = event.target.querySelector("#certificate-amount")?.value;
   const confirmation = certificateAmount
-    ? `Спасибо! Ваша заявка на подарочный сертификат на ${Number(certificateAmount).toLocaleString("ru-RU")} ₽ принята. Администратор свяжется с вами в ближайшее время.`
+    ? `Спасибо! Ваша заявка на подарочный сертификат на ${Number(certificateAmount).toLocaleString("ru-RU")} Br принята. Администратор свяжется с вами в ближайшее время.`
     : "Спасибо! Ваша заявка принята. Администратор свяжется с вами в ближайшее время.";
   alert(confirmation);
   event.target.reset();
