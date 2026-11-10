@@ -702,6 +702,9 @@ button {
         position: absolute;
         top: 100%;
         left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
         height: calc(100vh - var(--header-height));
         height: calc(100dvh - var(--header-height));
@@ -724,6 +727,7 @@ button {
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
+        margin-block: auto;
     }
     .beauty-header__burger {
         display: flex;
