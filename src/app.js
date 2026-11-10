@@ -68,8 +68,26 @@ document.addEventListener("click", event => {
   if (bookingTrigger) {
     const modal = document.getElementById("booking-modal");
     const serviceSelect = document.getElementById("service-select");
+    const amountInput = document.getElementById("certificate-amount");
+    const amountSummary = document.getElementById("certificate-amount-summary");
     const requestedService = bookingTrigger.dataset.bookingService;
+    let certificateAmount = bookingTrigger.dataset.certificateAmount || "";
+
+    if (bookingTrigger.dataset.certificateAmountInput) {
+      const customAmountInput = document.getElementById(bookingTrigger.dataset.certificateAmountInput);
+      if (!customAmountInput?.reportValidity()) return;
+      certificateAmount = customAmountInput.value;
+    }
+
     if (requestedService && serviceSelect) serviceSelect.value = requestedService;
+    if (amountInput) amountInput.value = requestedService === "gift-certificate" ? certificateAmount : "";
+    if (amountSummary) {
+      amountSummary.hidden = requestedService !== "gift-certificate" || !certificateAmount;
+      amountSummary.textContent = certificateAmount
+        ? `Вы выбрали сертификат на ${Number(certificateAmount).toLocaleString("ru-RU")} ₽`
+        : "";
+    }
+
     if (modal) {
       bookingModalTrigger = bookingTrigger;
       modal.classList.add("is-open");
@@ -139,8 +157,17 @@ document.addEventListener("keydown", event => {
 document.addEventListener("submit", event => {
   if (event.target.id !== "booking-form") return;
   event.preventDefault();
-  alert("Спасибо! Ваша заявка принята. Администратор свяжется с вами в ближайшее время.");
+  const certificateAmount = event.target.querySelector("#certificate-amount")?.value;
+  const confirmation = certificateAmount
+    ? `Спасибо! Ваша заявка на подарочный сертификат на ${Number(certificateAmount).toLocaleString("ru-RU")} ₽ принята. Администратор свяжется с вами в ближайшее время.`
+    : "Спасибо! Ваша заявка принята. Администратор свяжется с вами в ближайшее время.";
+  alert(confirmation);
   event.target.reset();
+  const amountSummary = document.getElementById("certificate-amount-summary");
+  if (amountSummary) {
+    amountSummary.hidden = true;
+    amountSummary.textContent = "";
+  }
   closeBookingModal();
 });
 const initFaq = () => {
