@@ -2652,7 +2652,7 @@ summary:focus-visible {
 .gift-certificates__back {
     display: inline-flex;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
     color: var(--color-text-secondary);
     font-size: 0.8125rem;
     transition: color var(--transition-base);
