@@ -2559,7 +2559,7 @@ summary:focus-visible {
 }
 .subscription-prices__item {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) repeat(2, minmax(125px, 0.42fr));
+    grid-template-columns: minmax(0, 1fr) minmax(125px, 0.42fr);
     align-items: center;
     gap: 1rem;
     min-width: 0;
@@ -2585,6 +2585,7 @@ summary:focus-visible {
     display: flex;
     min-width: 0;
     flex-direction: column;
+    justify-self: end;
     gap: 0.25rem;
 }
 .subscription-prices__visits {
@@ -2606,7 +2607,7 @@ summary:focus-visible {
 }
 @media (max-width: 900px) {
     .subscription-prices__item {
-        grid-template-columns: minmax(0, 1fr) repeat(2, minmax(110px, 0.42fr));
+        grid-template-columns: minmax(0, 1fr) minmax(110px, 0.42fr);
         gap: 0.75rem;
     }
 }
@@ -2624,6 +2625,9 @@ summary:focus-visible {
         grid-column: 1 / -1;
         font-size: 0.875rem;
     }
+    .subscription-prices__package {
+        grid-column: 2;
+    }
     .subscription-prices__price {
         font-size: 0.875rem;
     }
@@ -2631,6 +2635,9 @@ summary:focus-visible {
 @media (max-width: 360px) {
     .subscription-prices__item {
         grid-template-columns: minmax(0, 1fr);
+    }
+    .subscription-prices__package {
+        grid-column: 1;
     }
 }
 
