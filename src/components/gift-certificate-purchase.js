@@ -39,6 +39,19 @@ export function initGiftCertificatePurchase() {
   });
 
   customInput.addEventListener("input", () => {
+    const digitsOnly = customInput.value.replace(/[^0-9]/g, "");
+
+    if (customInput.value !== digitsOnly) {
+      const cursorPosition = customInput.selectionStart;
+      const removedBeforeCursor = customInput.value
+        .slice(0, cursorPosition)
+        .replace(/[0-9]/g, "").length;
+
+      customInput.value = digitsOnly;
+      const nextCursorPosition = Math.max(0, cursorPosition - removedBeforeCursor);
+      customInput.setSelectionRange(nextCursorPosition, nextCursorPosition);
+    }
+
     options.forEach(option => option.setAttribute("aria-pressed", "false"));
     updateAmount(customInput.value);
   });
