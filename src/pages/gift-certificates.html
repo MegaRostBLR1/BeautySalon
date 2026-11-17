@@ -1,56 +1,81 @@
-<main class="gift-certificates">
-    <section class="gift-certificates__hero" aria-labelledby="gift-certificates-title">
-        <div class="gift-certificates__container">
-            <span class="gift-certificates__eyebrow">Ничего лишнего · Подарок с заботой</span>
-            <h1 class="gift-certificates__title" id="gift-certificates-title">Выберите подарочный сертификат</h1>
-            <p class="gift-certificates__intro">Подарите близким возможность выбрать время и процедуру для себя. Выберите подходящий номинал или укажите свою сумму.</p>
+<main class="gift-purchase" data-gift-purchase>
+    <section class="gift-purchase__hero" aria-labelledby="gift-purchase-title">
+        <div class="gift-purchase__container">
+            <span class="gift-purchase__eyebrow">Ничего лишнего · Подарок с заботой</span>
+            <h1 class="gift-purchase__title" id="gift-purchase-title">Подарочный сертификат</h1>
+            <p class="gift-purchase__intro">Выберите сумму, проверьте оформление и укажите email для получения сертификата.</p>
         </div>
     </section>
 
-    <section class="gift-certificates__content" aria-labelledby="gift-certificates-options-title">
-        <div class="gift-certificates__container">
-            <h2 class="gift-certificates__section-title" id="gift-certificates-options-title">Выберите номинал</h2>
-            <div class="gift-certificates__grid">
-                <button class="gift-certificates__option" type="button" data-open-booking data-booking-service="gift-certificate" data-certificate-amount="100" aria-label="Оформить подарочный сертификат на 100 BYN">
-                    <span class="gift-certificates__option-label">Подарочный сертификат</span>
-                    <span class="gift-certificates__option-amount">100 <span>Br</span></span>
-                    <span class="gift-certificates__option-action">Выбрать</span>
-                </button>
-                <button class="gift-certificates__option" type="button" data-open-booking data-booking-service="gift-certificate" data-certificate-amount="200" aria-label="Оформить подарочный сертификат на 200 BYN">
-                    <span class="gift-certificates__option-label">Подарочный сертификат</span>
-                    <span class="gift-certificates__option-amount">200 <span>Br</span></span>
-                    <span class="gift-certificates__option-action">Выбрать</span>
-                </button>
-                <button class="gift-certificates__option" type="button" data-open-booking data-booking-service="gift-certificate" data-certificate-amount="300" aria-label="Оформить подарочный сертификат на 300 BYN">
-                    <span class="gift-certificates__option-label">Подарочный сертификат</span>
-                    <span class="gift-certificates__option-amount">300 <span>Br</span></span>
-                    <span class="gift-certificates__option-action">Выбрать</span>
-                </button>
-                <button class="gift-certificates__option" type="button" data-open-booking data-booking-service="gift-certificate" data-certificate-amount="400" aria-label="Оформить подарочный сертификат на 400 BYN">
-                    <span class="gift-certificates__option-label">Подарочный сертификат</span>
-                    <span class="gift-certificates__option-amount">400 <span>Br</span></span>
-                    <span class="gift-certificates__option-action">Выбрать</span>
-                </button>
-                <button class="gift-certificates__option" type="button" data-open-booking data-booking-service="gift-certificate" data-certificate-amount="500" aria-label="Оформить подарочный сертификат на 500 BYN">
-                    <span class="gift-certificates__option-label">Подарочный сертификат</span>
-                    <span class="gift-certificates__option-amount">500 <span>Br</span></span>
-                    <span class="gift-certificates__option-action">Выбрать</span>
-                </button>
-            </div>
+    <section class="gift-purchase__content" aria-label="Оформление подарочного сертификата">
+        <div class="gift-purchase__container gift-purchase__layout">
+            <section class="gift-purchase__preview" aria-labelledby="gift-purchase-preview-title">
+                <div class="gift-purchase__section-heading">
+                    <span class="gift-purchase__step">01</span>
+                    <h2 class="gift-purchase__section-title" id="gift-purchase-preview-title">Ваш сертификат</h2>
+                </div>
+                <div class="gift-certificate__visual gift-purchase__visual">
+                    <div class="gift-certificate__card gift-purchase__certificate">
+                        <span class="gift-certificate__brand">НИЧЕГО ЛИШНЕГО</span>
+                        <span class="gift-certificate__ornament" aria-hidden="true">✦</span>
+                        <span class="gift-certificate__label">Подарочный</span>
+                        <span class="gift-certificate__name">сертификат</span>
+                        <span class="gift-certificate__caption">ВРЕМЯ ДЛЯ СЕБЯ — ЛУЧШИЙ ПОДАРОК</span>
+                        <span class="gift-certificate__amount gift-purchase__certificate-amount" data-certificate-preview aria-live="polite">ВЫБЕРИТЕ СУММУ</span>
+                    </div>
+                </div>
+                <p class="gift-purchase__preview-note">Это предварительный вид электронного сертификата. Финальный файл будет сформирован после подтверждения оплаты.</p>
+            </section>
 
-            <div class="gift-certificates__custom">
-                <div class="gift-certificates__custom-content">
-                    <span class="gift-certificates__custom-eyebrow">Индивидуальный номинал</span>
-                    <h2 class="gift-certificates__custom-title">Своя сумма</h2>
-                    <p class="gift-certificates__custom-description">Укажите сумму, на которую хотите оформить подарочный сертификат.</p>
+            <section class="gift-purchase__form-section" aria-labelledby="gift-purchase-form-title">
+                <div class="gift-purchase__section-heading">
+                    <span class="gift-purchase__step">02</span>
+                    <h2 class="gift-purchase__section-title" id="gift-purchase-form-title">Параметры заказа</h2>
                 </div>
-                <div class="gift-certificates__custom-form">
-                    <label class="gift-certificates__input-label" for="custom-certificate-amount">Сумма сертификата, Br</label>
-                    <input class="gift-certificates__input" id="custom-certificate-amount" name="certificate-amount" type="number" min="1" step="1" inputmode="numeric" placeholder="Например, 750" required>
-                    <button class="button button--primary gift-certificates__custom-button" type="button" data-open-booking data-booking-service="gift-certificate" data-certificate-amount-input="custom-certificate-amount">Продолжить</button>
+
+                <fieldset class="gift-purchase__fieldset">
+                    <legend class="gift-purchase__legend">Выберите номинал</legend>
+                    <div class="gift-purchase__amounts">
+                        <button class="gift-purchase__amount-option" type="button" data-certificate-option="100" aria-pressed="false">100 <span>BYN</span></button>
+                        <button class="gift-purchase__amount-option" type="button" data-certificate-option="200" aria-pressed="false">200 <span>BYN</span></button>
+                        <button class="gift-purchase__amount-option" type="button" data-certificate-option="300" aria-pressed="false">300 <span>BYN</span></button>
+                        <button class="gift-purchase__amount-option" type="button" data-certificate-option="400" aria-pressed="false">400 <span>BYN</span></button>
+                        <button class="gift-purchase__amount-option" type="button" data-certificate-option="500" aria-pressed="false">500 <span>BYN</span></button>
+                    </div>
+                </fieldset>
+
+                <div class="gift-purchase__custom">
+                    <label class="gift-purchase__label" for="gift-purchase-custom-amount">Или укажите свою сумму, BYN</label>
+                    <input class="gift-purchase__input" id="gift-purchase-custom-amount" type="number" min="1" step="1" inputmode="numeric" placeholder="Например, 750" data-certificate-custom>
+                    <p class="gift-purchase__hint">Можно выбрать готовый номинал или ввести произвольную сумму.</p>
                 </div>
-            </div>
-            <a class="gift-certificates__back" href="#/home#gift-certificate">← Вернуться назад</a>
+
+                <div class="gift-purchase__divider"></div>
+
+                <div class="gift-purchase__section-heading gift-purchase__buyer-heading">
+                    <span class="gift-purchase__step">03</span>
+                    <h2 class="gift-purchase__section-title">Данные покупателя</h2>
+                </div>
+                <div class="gift-purchase__buyer-fields">
+                    <div class="gift-purchase__field">
+                        <label class="gift-purchase__label" for="gift-purchase-name">Ваше имя <span>необязательно</span></label>
+                        <input class="gift-purchase__input" id="gift-purchase-name" name="name" type="text" autocomplete="name" maxlength="100" placeholder="Как к вам обращаться">
+                    </div>
+                    <div class="gift-purchase__field">
+                        <label class="gift-purchase__label" for="gift-purchase-email">Email для получения сертификата <span class="gift-purchase__required">обязательно</span></label>
+                        <input class="gift-purchase__input" id="gift-purchase-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required>
+                    </div>
+                </div>
+
+                <div class="gift-purchase__total" aria-live="polite">
+                    <span>Сумма заказа</span>
+                    <strong data-certificate-total>Не выбрана</strong>
+                </div>
+
+                <button class="button button--primary gift-purchase__pay-button" type="button" disabled aria-disabled="true">Онлайн-оплата скоро появится</button>
+                <p class="gift-purchase__availability">Сейчас форма работает в режиме предварительного просмотра. Данные не отправляются и не сохраняются. Подключение безопасной оплаты и автоматической отправки PDF будет следующим этапом.</p>
+                <a class="gift-purchase__back" href="#/home#gift-certificate">← Вернуться на главную</a>
+            </section>
         </div>
     </section>
 </main>

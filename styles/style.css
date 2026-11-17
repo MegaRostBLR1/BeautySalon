@@ -3127,3 +3127,304 @@ summary:focus-visible {
         gap: 0.5rem;
     }
 }
+
+
+/* Gift certificate purchase */
+.gift-purchase {
+    min-height: 100vh;
+    padding-top: var(--header-height);
+    background: var(--color-bg-primary);
+}
+.gift-purchase__container {
+    width: min(100% - 2rem, var(--container-max-width));
+    margin: 0 auto;
+}
+.gift-purchase__hero {
+    padding: clamp(2.5rem, 5vw, 4rem) 0 2rem;
+    text-align: center;
+}
+.gift-purchase__eyebrow {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--color-accent-gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+.gift-purchase__title {
+    margin: 0 auto 0.75rem;
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.1;
+}
+.gift-purchase__intro {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.75;
+}
+.gift-purchase__content {
+    padding-bottom: var(--space-xl);
+}
+.gift-purchase__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: start;
+    gap: clamp(2rem, 5vw, 4.5rem);
+}
+.gift-purchase__preview,
+.gift-purchase__form-section {
+    min-width: 0;
+}
+.gift-purchase__section-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin-bottom: 1.25rem;
+}
+.gift-purchase__step {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid rgba(197, 160, 89, 0.55);
+    border-radius: 50%;
+    color: var(--color-accent-gold);
+    font-size: 0.6875rem;
+    letter-spacing: 0.04em;
+}
+.gift-purchase__section-title {
+    margin: 0;
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.gift-purchase__visual {
+    min-height: 390px;
+    padding: clamp(1rem, 2.5vw, 2rem);
+}
+.gift-purchase__certificate {
+    min-height: 330px;
+}
+.gift-purchase__certificate-amount {
+    max-width: 100%;
+    margin-top: 1.5rem;
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+.gift-purchase__preview-note {
+    margin: 1rem 0 0;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    line-height: 1.65;
+    text-align: center;
+}
+.gift-purchase__fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.gift-purchase__legend,
+.gift-purchase__label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-primary);
+    font-size: 0.8125rem;
+    font-weight: 500;
+}
+.gift-purchase__amounts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.625rem;
+}
+.gift-purchase__amount-option {
+    min-width: 0;
+    min-height: 64px;
+    padding: 0.75rem 0.5rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-card);
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: border-color var(--transition-base), background-color var(--transition-base);
+}
+.gift-purchase__amount-option span {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--color-text-secondary);
+    font-family: var(--font-primary);
+    font-size: 0.5625rem;
+    letter-spacing: 0.12em;
+}
+.gift-purchase__amount-option:hover,
+.gift-purchase__amount-option[aria-pressed="true"] {
+    border-color: var(--color-accent-gold);
+    background: rgba(197, 160, 89, 0.09);
+}
+.gift-purchase__amount-option:focus-visible,
+.gift-purchase__input:focus-visible {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 3px;
+}
+.gift-purchase__custom {
+    margin-top: 1.25rem;
+}
+.gift-purchase__input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-card);
+    color: var(--color-text-primary);
+    font: inherit;
+}
+.gift-purchase__input::placeholder {
+    color: #777;
+}
+.gift-purchase__hint {
+    margin: 0.5rem 0 0;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    line-height: 1.55;
+}
+.gift-purchase__divider {
+    height: 1px;
+    margin: 1.75rem 0;
+    background: var(--color-border);
+}
+.gift-purchase__buyer-heading {
+    margin-bottom: 1rem;
+}
+.gift-purchase__buyer-fields {
+    display: grid;
+    gap: 1rem;
+}
+.gift-purchase__field {
+    min-width: 0;
+}
+.gift-purchase__label span {
+    color: var(--color-text-secondary);
+    font-size: 0.6875rem;
+    font-weight: 400;
+}
+.gift-purchase__required {
+    color: var(--color-accent-gold) !important;
+}
+.gift-purchase__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+}
+.gift-purchase__total strong {
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: right;
+}
+.gift-purchase__pay-button {
+    width: 100%;
+    min-height: 52px;
+    margin-top: 1.25rem;
+    opacity: 0.58;
+    cursor: not-allowed;
+}
+.gift-purchase__pay-button:disabled {
+    transform: none;
+}
+.gift-purchase__availability {
+    margin: 0.875rem 0 0;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    line-height: 1.65;
+}
+.gift-purchase__back {
+    display: inline-flex;
+    margin-top: 1.5rem;
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+    transition: color var(--transition-base);
+}
+.gift-purchase__back:hover {
+    color: var(--color-accent-gold);
+}
+.gift-purchase__back:focus-visible {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 4px;
+}
+@media (max-width: 900px) {
+    .gift-purchase__layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+    }
+    .gift-purchase__preview {
+        max-width: 680px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .gift-purchase__form-section {
+        width: min(100%, 680px);
+        margin: 0 auto;
+    }
+    .gift-purchase__visual {
+        min-height: 0;
+    }
+}
+@media (max-width: 600px) {
+    .gift-purchase__hero {
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+    }
+    .gift-purchase__title {
+        font-size: 2.25rem;
+    }
+    .gift-purchase__intro {
+        font-size: 0.875rem;
+    }
+    .gift-purchase__section-title {
+        font-size: 1.5rem;
+    }
+    .gift-purchase__visual {
+        padding: 0.75rem;
+    }
+    .gift-purchase__certificate {
+        min-height: 270px;
+        padding: 2rem 1.25rem;
+    }
+    .gift-purchase__amounts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .gift-purchase__amount-option {
+        min-height: 58px;
+        font-size: 1.5rem;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .gift-purchase__amount-option,
+    .gift-purchase__back {
+        transition: none;
+    }
+}

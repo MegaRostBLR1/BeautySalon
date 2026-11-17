@@ -1,5 +1,6 @@
 import { renderBookingModal } from "./components/modal.js";
 import { renderRoute } from "./app/router.js";
+import { initGiftCertificatePurchase } from "./components/gift-certificate-purchase.js";
 
 document.querySelector("#app").innerHTML = `
   <div id="app-header"></div><div id="app-content" tabindex="-1"></div><div id="app-footer"></div>
@@ -252,6 +253,7 @@ const initFaq = () => {
   });
 };
 window.addEventListener("app:route-rendered", initFaq);
+window.addEventListener("app:route-rendered", initGiftCertificatePurchase);
 
 const syncNavigationAccessibility = () => {
   const menu = document.getElementById("nav-menu");
