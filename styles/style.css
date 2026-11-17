@@ -3180,6 +3180,11 @@ summary:focus-visible {
 .gift-purchase__form-section {
     min-width: 0;
 }
+.gift-purchase__preview {
+    position: sticky;
+    top: calc(var(--header-height) + 1.5rem);
+    align-self: start;
+}
 .gift-purchase__section-heading {
     display: flex;
     align-items: center;
@@ -3376,6 +3381,9 @@ summary:focus-visible {
     outline-offset: 4px;
 }
 @media (max-width: 900px) {
+    .gift-purchase__preview {
+        position: static;
+    }
     .gift-purchase__layout {
         grid-template-columns: minmax(0, 1fr);
         gap: 2.5rem;
