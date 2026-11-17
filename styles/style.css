@@ -3265,7 +3265,7 @@ summary:focus-visible {
     display: block;
     margin-top: 0.35rem;
     color: var(--color-text-secondary);
-    font-family: var(--font-primary);
+    font-family: var(--font-body);
     font-size: 0.5625rem;
     letter-spacing: 0.12em;
 }
